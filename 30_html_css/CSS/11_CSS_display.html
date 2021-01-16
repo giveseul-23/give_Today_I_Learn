@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>display-block,inline,inline_block</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid #575757;
+            /*전체 영역을 차지하지만 현재는 가로와 세로값을 주었음*/
+            background-color: #d9d9d9;
+        }
+        span{
+            background-color: #f4ffff;
+            border: 1px solid aqua;
+            width: 100px;
+            height: 100px;
+            /*폭과 높이를 주어도 영향을 미치지 않는다.*/
+        }
+        .inline-block{
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS display : blick, inline, inline-block</h1>
+    <h3>태그는 block 속성</h3>
+    <p>block 속성은 브라우저 좌측부터 우측까지 영역을 차지(데이터 크기와 관계없이)</p>
+    <p>block 속성은 크기를 가짐 - width, height 지정</p>
+    <div>div는 block 속성</div>
+    일반 텍스트~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <hr>
+    <h3>span 태그 inline 속성</h3>
+    <p>inline 속성은 라인내에서 영역을 차지(데이터 크기만큼)</p>
+    <p>inline 속성은 내용(contents)의 크기로 정해짐</p>
+    <span>span inline 속성이다.</span> 그래서 한 줄로 표시됨
+    <span>크기를 지정해도 크기가 달라지지 않는다.</span>
+    일반 텍스트~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    <hr>
+    
+    <h3>inline-block 속성</h3>
+    <p>inline-block 속성 라인 내에서 영역을 차지(inline)</p>
+    inline-block은 <span class="inline-block">전체 영역을 차지하지 않고</span> 한 줄에 표시되지만
+    <div class="inline-block">가로, 세로 크기를 가진다.</div>  
+</body>
+</html>

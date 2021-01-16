@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container{
+            background-color: powderblue;
+            /*
+                부모가 flex 속성을 가지면 자식은 inline 성질을 가진다.
+                flex-direction 의 default 는 row이고
+                종류에는 row, row-reverse, column, column-reverse가 있다.
+            */
+            display: flex;
+        }
+        .item{
+            background-color: tomato;
+            color: white;
+            border: 1px solid white;
+            width: 100px;
+/*            flex-grow: 1;*/
+        }
+        .item:nth-child(2){
+            flex-grow: 2;
+/*            flex-basis: 200px;*/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>

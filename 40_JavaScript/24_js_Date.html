@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS : Date</title>
+<script>
+    /* 내장객체 Date
+    getFullYear() : 년도 4자리
+    getMonth() : 월(0~11) - 0: 1월, 11: 12월
+    getDate() : 일
+    getDay() : 요일(0:일, 1:월, ..., 6: 토)
+    
+    getHours() : 시간
+    getMinutes() : 분
+    getSeconds() : 초
+    
+    getMilliseconds() : 밀리초(1/1000 초)
+    getTime() : 1970년 1월 1일 경과시간(밀리초 기준)
+    ------------------------------
+    Date 객체를 생성하는 4가지 방법
+    new Date();
+    new Date(milliseconds);
+    new Date(날짜형식문자열); - "2020/01/13 13:23:30"
+    new Date(year, month, date, hours, minutes, seconds, milliseconds);
+    *****************************/
+    var dt = new Date();
+    document.write("new Date() : " + dt, "<br>"); //Wed Jan 13 2021 13:24:54 GMT+0900 (대한민국 표준시)
+    
+    //년월일 구하기
+    let yyyy = dt.getFullYear();
+    let mm = dt.getMonth() + 1; //현재 1월 : 리턴값이 0 + 1
+    let dd = dt.getDate();
+    let yyyymmdd = yyyy + "/" + (mm<10 ? "0"+mm : mm) + "/" + dd;
+    document.write("년/월/일 : " + yyyymmdd, "<br>");
+    
+    //시분초 구하기
+    let hh = dt.getHours();
+    let mi = dt.getMinutes();
+    let ss = dt.getSeconds();
+    let hhmiss = hh + ":" + mi + ":" + ss;
+    document.write("시:분:초 - " + hhmiss, "<br>");
+    
+    //----------------
+    //초 미만 값 : 밀리초(1/1000 초 단위)
+    let millsec = dt.getMilliseconds();
+    document.write("밀리초 - " + millsec, "<br>");
+    
+    //================================
+    // 1초 : 1000 밀리초
+    // 1분 : 60초 * 1000 (1분에 대한 밀리초)
+    // 1시간 : 60분 * (60초 * 1000)
+    // 1일 : 24시간 * (60분 * 60초 * 1000)
+    //----------------
+    let time = dt.getTime();
+    document.write("dt.getTime() : " + time, "<br>");
+    
+    //1970년 1월 1일 부터 지난 날짜수 구하기
+    let days = time / 1000 / 60 / 60 / 24;
+    days = time / 24 / 60 / 60 / 1000;
+    days = time / (24 * 60 * 60 * 1000);
+    days = time / (1440 * 60 * 1000);
+    days = time / (86400 * 1000);
+    days = time / 86400000;
+    document.write("1970년 1월 1일 부터 지난 날짜수 : " + days, "<br>");
+    document.write("<hr>");
+    
+    //==================================
+    /* 날짜 값 설정
+    setFullYear() : 년도 4자리
+    setMonth() : 월(0~11) - 0: 1월, 11: 12월
+    setDate() : 일
+    setDay() : 요일(0:일, 1:월, ..., 6: 토)
+    
+    setHours() : 시간
+    setMinutes() : 분
+    setSeconds() : 초
+    
+    setMilliseconds() : 밀리초(1/1000 초)
+    setTime() : 1970년 1월 1일 경과시간(밀리초 기준)
+    **********************************/
+    let dt1 = new Date();
+    document.write("new Date() : " + dt1, "<br>");
+    let dt2 = new Date(2021, 1, 10); // 2021-02-10
+    document.write("new Date(2021, 1, 10) : " + dt2, "<br>");
+    
+    //연산처리
+    let diffDate = dt2 - dt1;
+    document.write("> 날짜연산결과 : " + diffDate, "<br>");
+    
+    //날짜 계산값을 일수로 환산
+    let durDays = diffDate / (24 * 60 * 60 * 1000);
+    document.write("> 날짜차이(일수) : " + durDays, "<br>");
+    
+    //날짜변경
+    dt2.setMonth(6); // 7월로 설정
+    dt2.setDate(22);
+    document.write(">> 변경된 날짜 : " + dt2, "<br>");
+    
+    //===========
+    let dt3 = new Date("2021/03/13 13:23:30"); // "2021/03/13 13:23:30"
+    document.write(">> 설정된 날짜 : " + dt3, "<br>");
+</script>
+</head>
+<body>
+
+
+    
+<br><br><br><br><br><br><br><br><br><br><br>    
+<br><br><br><br><br><br><br><br><br><br><br>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+

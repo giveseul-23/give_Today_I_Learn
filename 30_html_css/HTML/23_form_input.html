@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form input 태그</title>
+</head>
+<style>
+    form {
+        display: block;
+    }
+
+    .submit {
+        position: absolute;
+        right: 0;
+        margin-right: 20px;
+    }
+</style>
+
+<body>
+    <h2>HTML form 태그</h2>
+
+    <form action="">
+        <fieldset>
+            <legend>로그인 정보</legend>
+            아이디 &nbsp;&nbsp;&nbsp;: <input type="text" name="userid" placeholder="아이디"><br>
+            패스워드 : <input type="password" name="password" placeholder="암호(영문숫자 5~20)">
+        </fieldset>
+        <br>
+        <filedset>
+            <legend>가입자 정보</legend>
+            성명&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="text" name="name"><br>
+            나이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="number" name="age" value="20" min="1" max="150" style="width: 160px"><br>
+            전화번호&nbsp;: <input type="tel" name="tel"><br>
+            이메일&nbsp;&nbsp;&nbsp;&nbsp;: <input type="email" name="email" style="background-color: rgba(217, 242, 255, 0.5); color: #cbcbcb; font-weight: 100" value="email@email.com"><br>
+            생일&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <input type="date" name="birth"><br>
+            좋아하는 색 : <input type="color" name="color">
+        </filedset>
+
+        <input class="submit" type="submit" value="전송(요청)">
+    </form>
+</body></html>

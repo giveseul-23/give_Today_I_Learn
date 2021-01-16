@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>구구단_2-9단(table)</title> 
+    <style>
+        thead>tr>th{
+            width: 50px;
+        }
+        
+        
+    </style>
+    <script>
+        document.write("<table border>");
+            document.write("<thead>");
+                document.write("<tr>")
+                for(var i=2; i<10; i++){
+                    document.write(i+"단 "+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp");
+                }
+                document.write("</tr>")
+            document.write("</thead>");
+            
+            document.write("<tbody>")
+        
+            var w = 1;
+            while(w<10){
+                document.write("<tr>");
+                for(var i=2; i<10; i++){
+                 document.write("<td>" + i +  "*" + w + " = " + (i*w) + "</td>");
+                }
+                document.write("</tr>");
+                w++;
+            }
+            
+            document.write("</tbody>")
+            
+        document.write("</table>");
+        
+    </script>
+</head>
+<body>
+<!--
+    <h1>구구단 출력(2-9단)</h1>
+    <table border="">
+        <thead>
+            <tr>
+                <th>2단</th>
+                <th>3단</th>
+                <th>4단</th>
+                <th>...<th></th>
+                <th>9단</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2*1=2</td>
+                <td>3*1=3</td>
+            </tr>
+            <tr>
+                <td>2*2=4</td>
+                
+            </tr>
+            <tr>
+                <td>...</td>
+                
+            </tr>
+            <tr>
+                <td>2*9=18</td>
+                
+            </tr>
+        </tbody>
+        
+    </table>
+-->
+</body>
+</html>

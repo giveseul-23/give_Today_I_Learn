@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery import</title>
+    <!--jQuery import 방식1 : 파일에 직접 저장하여-->
+    <!--<script src="js/jquery-3.5.1.js"></script>-->
+    <!--jQuery import 방식2 : 웹상의 문서를(CDN)-->
+    <!-- -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        //javaScript DOM 객체 다루기
+        window.onload = function(){
+            document.getElementById('id1').style.color = "red"
+        };
+        
+        //제이쿼리(jQuery) 사용방식 3가지 형태
+        //방식1 : jQuery(document).ready(function(){});
+        jQuery(document).ready(function(){
+            jQuery('#id1').css("color","blue");
+            jQuery('#id1').css("background-color","yellow");
+        });
+        $(document).ready(function(){
+            $('#id1').css("color","green");
+            $('#id1').css("background-color","black");
+        });
+        
+        //방식2 : $().ready(function(){});
+        $().ready(function(){
+            $('#id1').css("border","3px solid red");
+        });
+        
+        //방식3 : $(function(){});
+        $(function(){
+            $('#id1').css("background-color","gray")
+        });
+    </script>
+</head>
+<body>
+    <h1 id="id1">제이쿼리 - id1</h1>
+    <script>
+        /*
+        여기서는 $(document).ready(fuction(){}) 이 구문을 작성하지 않아도 된다.
+        왜냐하면 이미 위 html 읽고 난 다음 script가 작성되었기 때문
+        */
+        $("#id1").css("width", "500px");
+    </script>
+</body>
+</html>

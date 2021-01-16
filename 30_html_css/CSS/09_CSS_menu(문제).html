@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>메뉴 만들기</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            border: 0;
+            text-decoration: none;
+        }
+        
+        ul{
+            width: auto;
+            height: 74px;
+            font-size: 20px;
+        }
+        
+        li{
+            width: 24%;
+            display: inline-block;
+        }
+        
+        a{
+            color: white;
+            width: 24.4%;
+            position: absolute;
+            padding: 23px;
+            margin-top: -21px;
+            background-color: #ccc;
+        }
+        
+        a:hover{
+            text-decoration: underline;
+            background-color: #4a4a4a;
+        }
+        
+        .active, .active:hover{
+            background-color: red;
+            
+        }
+        nav li:last-child a{
+            text-align: right;
+            padding-right: -50px;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li> 
+            <li><a href="#contact">Contact</a></li> 
+            <li><a href="#about">About</a></li> 
+        </ul>
+    </nav>
+    
+<!--
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>복숭아</li>
+            <li>배</li>
+        </ul>
+    </div>
+-->
+</body>
+</html>

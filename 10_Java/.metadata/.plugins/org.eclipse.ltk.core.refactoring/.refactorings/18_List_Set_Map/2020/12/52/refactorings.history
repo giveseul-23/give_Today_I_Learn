@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.mystudy.queue_stack.Queue&apos; to &apos;Queue_Exam&apos;&#x0D;&#x0A;- Original project: &apos;18_List_Set_Map&apos;&#x0D;&#x0A;- Original element: &apos;com.mystudy.queue_stack.Queue&apos;&#x0D;&#x0A;- Renamed element: &apos;com.mystudy.queue_stack.Queue_Exam&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Queue&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.mystudy.queue_stack{Queue.java[Queue" matchStrategy="1" name="Queue_Exam" qualified="false" references="true" similarDeclarations="false" stamp="1608519796310" textual="false" version="1.0"/>
+</session>

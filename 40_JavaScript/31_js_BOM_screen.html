@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BOM screen</title>
+<script>
+    /*
+        BOM screen 객체 속성
+        screen.width : 현재 스크린(모니터) 너비값(가로크기)
+        screen.height : 현재 스크린(모니터) 높이값(세로크기)
+        screen.availWidth : 현재 스크린(모니터) "사용가능" 너비값(가로크기)
+        screen.availHeight : 현재 스크린(모니터) "사용가능" 높이값(세로크기)
+        screen.colorDepth : 표현가능 색상 값(bit)
+        screen.pixelDepth : 픽셀
+    */
+    //모니터(스크린) 해상도 확인
+    document.write("스크린(가로) : " + screen.width, "<br>");
+    document.write("스크린(세로) : " + screen.height, "<br>");
+    document.write("<br>")
+    //모니터(스크린) 사용가능 영역
+    document.write("스크린 사용가능 영역(가로) : " + screen.availWidth, "<br>");
+    document.write("스크린 사용가능 영역(세로) : " + screen.availHeight, "<br>");
+    document.write("<br>")
+    //표현 색상 값(bit), 픽셀
+    document.write("스크린 색상표현 : " + screen.colorDepth, "<br>");
+    document.write("스크린 픽셀표현 : " + screen.pixelDepth, "<br>");
+</script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>메뉴만들기</title>
+    <style>
+        nav ul {
+            /* border: 1px solid blue; */
+            list-style-type: none;
+            margin: 0; padding: 0;
+            background-color: #444;
+            overflow: hidden;
+        }
+        nav li {
+            float: left;
+            /* display: inline-block; */
+            /* border: 1px solid red; */
+        }
+        nav a {
+            /* border: 1px solid yellow; */
+            display: block;
+            padding: 20px;
+            text-decoration: none;
+            font-size: 1.5em;
+            color: white;
+            border-right: 2px solid #999;
+        }
+        nav li:last-child {
+            float: right;
+            border-left: 2px solid #999;
+        }
+        nav .active, nav .active:hover {
+            background-color: red;
+        }
+        nav a:hover {
+            background-color: #aaa;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a class="active" href="#home">Home</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+    
+    <hr>
+    <div>
+        <ul>
+            <li>사과</li>
+            <li>복숭아</li>
+            <li>배</li>
+        </ul>
+    </div>
+    
+    
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body>    
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

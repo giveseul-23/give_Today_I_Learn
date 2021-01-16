@@ -1,0 +1,230 @@
+package ex05; //패키지는 각자 위치에 맞게 변경해주세요.
+
+/*
+    JDBC : Java Database Connectivity
+
+    고양이 분양소에서 사용할 고양이 관리 프로그램을 만들려고 합니다.
+    고양이 테이블을 만들고 추가, 조회, 수정, 삭제 기능을 구현해주세요.
+
+    1. 고양이 테이블 생성
+    CREATE TABLE CATS (
+        CAT_ID     NUMBER(8),
+        CAT_NAME   VARCHAR2(20),
+        CAT_AGE    NUMBER(3),
+        constraint CAT_ID_PK primary key(CAT_ID)
+    );
+    2. 고양이 아이디 자동생성용 시퀀스
+    CREATE SEQUENCE CAT_ID_SEQ start with 1 increment by 1 nocache;
+    -- CAT_ID_SEQ.nextval : 다음 번호(맨처음엔 1번)
+    -- CAT_ID_SEQ.currval : 지금 세션에서 현재 번호
+
+    3. MapCatRepository 클래스의 메소드를 구현해주세요.
+    4. JdbcCatRepository 클래스의 메소드를 구현해주세요.
+    5. Main Method를 구현해주세요.
+*/
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.*;
+
+public class Exam05 {
+    public static void main(String[] args) {
+        CatRepository catRepository = new MapCatRepository(); //구현할 클래스를 선택해서 null 대신 넣어주세요.
+
+        //1. cat 세마리 추가
+        Cat cat1 = new Cat("조", 3);
+        Cat cat2 = new Cat("무", 4);
+        Cat cat3 = new Cat("래기", 5);
+        catRepository.addCat(cat1);
+        catRepository.addCat(cat2);
+        catRepository.addCat(cat3);
+
+        //2. cat id로 찾아서 출력하기
+        System.out.println(catRepository.findCatById(1).toString());
+
+        //3. cat 이름으로 찾아서 출력하기
+        System.out.println(catRepository.findCatByName("래기").toString());
+
+        //4. 전체 캣 출력하기
+        System.out.println(catRepository.findCats().toString());
+
+        //5. cat 한마리 바꿔치기 하고 전체 cat 출력하기
+        catRepository.updateCat(2, new Cat("연님", 6));
+        System.out.println(catRepository.findCatById(2).toString());
+
+        //6. cat 한마리 분양보내기
+        catRepository.removeCat(catRepository.findCatById(1));
+        System.out.println(catRepository.findCats().toString());
+
+
+    }
+}
+
+interface CatRepository {
+    Integer addCat(Cat cat); //Cat을 추가하고 Cat ID를 리턴하는 메소드
+    Cat findCatById(Integer id); //id로 고양이를 찾아서 리턴. 없으면 null
+    Cat findCatByName(String name); //이름으로 고양이를 찾아서 리턴. 없으면 null
+    List<Cat> findCats(); //모든 고양이를 리턴
+    boolean updateCat(Integer id, Cat cat); //해당 id에 새로운 고양이를 넣는다. 결과는 성공여부 출력
+    Cat removeCat(Cat cat); //고양이를 저장소에서 삭제하고, 삭제된 고양이를 리턴. 없으면 null
+    void reset(); //테이블의 모든 내용을 삭제
+}
+
+class JdbcCatRepository implements CatRepository {
+    final String DRIVER = "oracle.jdbc.OracleDriver";
+    final String URL = "jdbc:oracle:thin:@localhost:1521:xe";
+    final String USER = "cat";
+    final String PW = "cat";
+
+    private Connection conn;
+    private PreparedStatement pstmt;
+    private ResultSet rs;
+
+
+    Class.forName(DRIVER);
+
+
+    @Override
+    public Integer addCat(Cat cat) {
+
+        return null;
+    }
+
+    @Override
+    public Cat findCatById(Integer id) {
+        return null;
+    }
+
+    @Override
+    public Cat findCatByName(String name) {
+        return null;
+    }
+
+    @Override
+    public List<Cat> findCats() {
+        return null;
+    }
+
+    @Override
+    public boolean updateCat(Integer id, Cat cat) {
+        return false;
+    }
+
+    @Override
+    public Cat removeCat(Cat cat) {
+        return null;
+    }
+
+    @Override
+    public void reset() {
+    }
+}
+
+class MapCatRepository implements CatRepository {
+    private final Map<Integer, Cat> store = new HashMap<>();
+    private int count = 0;
+
+    @Override
+    public Integer addCat(Cat cat) {
+        count = store.size() + 1;
+        Cat thisCat = new Cat(cat.getName(), cat.getAge());
+        thisCat.setId(count);
+        store.put(count, thisCat);
+        return count;
+    }
+
+    @Override
+    public Cat findCatById(Integer id) {
+        if(store.get(id) != null){
+            return store.get(id);
+        }
+        return  null;
+    }
+
+    @Override
+    public Cat findCatByName(String name) {
+        Iterator<Integer> ite = store.keySet().iterator();
+        while(ite.hasNext()){
+            int key = ite.next();
+            if(name.equals(store.get(key).getName())){
+                return store.get(key);
+
+
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public List<Cat> findCats() {
+        List<Cat> list = new ArrayList<>();
+        Iterator<Integer> ite = store.keySet().iterator();
+        while(ite.hasNext()){
+            int key = ite.next();
+            list.add(store.get(key));
+        }
+        return list;
+    }
+
+    @Override
+    public boolean updateCat(Integer id, Cat cat) {
+        if(store.get(id) != null){
+            store.replace(id, cat);
+            cat.setId(id);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public Cat removeCat(Cat cat) {
+        return store.remove(cat.getId());
+    }
+
+    @Override
+    public void reset() {
+        Iterator<Integer> ite = store.keySet().iterator();
+        while(ite.hasNext()){
+            int key = ite.next();
+            store.remove(key);
+        }
+        System.out.println("store reset");
+    }
+}
+
+class Cat {
+    private int id;
+    private String name;
+    private int age;
+
+    public Cat(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    @Override
+    public String toString() {
+        return "Cat{" + "id = " + id +
+                ", name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window.setInterval()</title>
+<script>
+    //window.setInterval() : 정해진 시간마다 반복적으로 동작
+    //window.setInterval(액션, 밀리초) : 밀리초마다 액션 반복
+    //window.clearInterval(타이머객체) : 타이머 객체 동작 중지
+    var i=0;
+    console.log("console 창에 출력 : " + ++i);
+    console.log(++i);
+    console.log(++i);
+    console.log(++i);
+    console.log(++i);
+    console.log("--------------------")
+    
+    i=0;
+    console.log(">>setInteval()에 의한 출력");
+    var auto = window.setInterval("console.log(++i)", 1000);
+</script>
+</head>
+<body>
+    <button onclick="clearInterval(auto)">clearInterval 실행해서 타이머객체 중단</button>
+    <!--clearInterval(auto) auto 객체를 clearInterval 하겠다는 의미-->
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css_border</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 600px;
+            height: 50px;
+            border: 5px solid;
+        }
+        #div1{
+            border-style: dotted;
+            margin: 20px;
+            font-size: 1.5em;
+        }
+        #div2{
+            border-style:  double;
+        }
+        #div3{
+            border-style: dotted double;
+        }
+        #div4{
+            border-style: dotted solid double;
+        }
+        #div5{
+            border-style: dotted solid double dashed
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS border</h1>
+    기본폰트 크기 : 16px, 1em, 1rem;
+    <!--1rem - 기본 브라우저에 적용된 1배 사이즈-->
+    <div>border : 5px solid(기본크기)</div>
+    <div id="div1">border-style : dotted</div>
+    <div id="div2">border-style : double</div>
+    <div id="div3">border-style:dotted double(상하, 좌우)</div>
+    <div id="div4">border-style : dotted solid double(상, 좌우, 하)</div>
+    <div id="div5">border-style : dotted solid double dashed(상, 좌우, 하)</div>
+    <div id="div6">border-style : none</div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+SELECT job_id as JOB_ID
+FROM EMPLOYEES

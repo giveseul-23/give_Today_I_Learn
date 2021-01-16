@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS : Object</title>
+<script>
+    var str = null;
+    document.write(typeof str,"<br>");
+    document.write("<hr>");
+    
+    //objcect : 객체 사용법
+    //객체의 선언 및 사용법
+    var tv = new Object();
+    document.write(typeof tv, "<br>");
+    tv.width = 1500; //tv 객체에 속성 추가되고 값이 설정됨
+    tv.height = 700;
+    tv.color = "black";
+    tv.on = function(){
+        document.write("tv전원 on", "<br>");
+    };
+    tv.off = function(){
+        document.write("전원 off", "<br>");
+    }
+    
+    //객체사용 - 속성, 기능(메소드, function)
+    
+    //객체 속성 사용
+    //방법01
+    document.write(tv.width,"<br>");
+    document.write(tv.height,"<br>");
+    document.write(tv.color,"<br>");
+    document.write("---------","<br>")
+    //방법02
+    document.write("tv[width] : " + tv["width"], "<br>")
+    document.write("tv[height] : " + tv['height'], "<br>")
+    //객체 기능 사용
+    tv.on();
+    tv.off();
+    
+    //------------------------
+    //속성의 유무확인 : 속성명 in 객체
+    document.write("tv의 컬러속성 여부 : " + ("color" in  tv), "<br>");
+    document.write("tv의 width속성 여부 : " + ("width" in  tv), "<br>");
+    
+    //속성삭제 : delete 객체, 속성명
+    delete tv.color;
+    document.write("tv에 color 속성(삭제 후) 여부 : " + ("color" in  tv), "<br>");
+    
+    //속성추가 또는 수정
+    tv.color = "gray";
+    document.write(tv.color,"<br>");
+    tv.color = "yellow";
+    document.write(tv.color,"<br>");
+    
+    //---------------------------
+    //객체 선언 및 생성방식2
+    //{속성명 : 값1, 속성명 : 값2...., 속성명n : 값n}
+    var tv2 = {
+        width : 1100,
+        height : 710,
+        color : "검정",
+        on : function(){
+            document.write("<p>전원켜짐</p>");
+        },
+        off : function(){
+            document.write("<p>전원꺼짐</p>");
+        },
+        size :  function(){
+            document.write("<p>크기 : " + this.width + " x " + this.height + "</p>");
+            //객체 내부에 선언한 height, width..들은 앞에 this.을 쓰지 않으면 전역변수라고 생각하게 됨(주의!!!)
+        }
+    }
+    //객체사용
+    document.write("tv2.width : " + tv.width ,"<br>");
+    document.write("tv2.height : " + tv.height ,"<br>");
+    tv2.size();
+    tv2.on();
+    tv2.off();
+    document.write("<hr>");
+    //---------------------------
+    //객체의 속성명 참조
+    for(let prop in tv){
+        document.write(prop, "<br>");
+    }
+    document.write("<hr>");
+    
+    //객체의 속성에 저장되어 있는 값 확인
+    for(let prop in tv2){
+        document.write(tv2[prop] + "<br>"); //tv.prop 는 사용할 수 없음
+    }
+    
+</script>
+</head>
+<body>
+    
+</body>
+</html>

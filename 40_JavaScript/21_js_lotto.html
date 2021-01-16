@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로또 만들기</title>
+    <style>
+        .ball{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin-left: 10px;
+            border: solid 1px;
+            text-align: center;
+            line-height: 100px;
+            border-radius: 100px;
+        }
+        .ball0{
+            background-color: deepskyblue;
+        }
+        .ball1{
+            background-color: plum;
+        }
+        .ball2{
+            background-color: palevioletred;
+        }
+        .ball3{
+            background-color: palegreen;
+        }
+        .ball4{
+            background-color: peachpuff;
+        }
+        .ball5{
+            background-color: peru;
+        }
+    
+    </style>
+<script>
+    
+    /*
+        실습 로또번호 만들고 화면출력
+        1. 로또번호 저장할 배열을 만들고
+        2. 1~45 숫자 중 중복되지 않는 숫자 생성하여 배열에 저장
+            2-1. 1~45 숫자중 랜덤하게 숫자를 만들고(Math.random())
+            2.2 중복된 값이 있으면 다시 생성해서 6개의 번호 배열 저장
+        3. 화면출력 html div태그에 ball, ball+숫자 클래스명 사용
+    */
+    
+    document.write("<h3>1~45까지의 숫자 중 6개를 추출해서 로또만들기</h3>");
+    var arr = new Array();
+    
+    for(let i=0; i<6; i++){
+        arr[i] = (Math.floor(Math.random()*45))+1;
+    }
+
+    document.write("<hr>");
+    for(let i=0; i<arr.length; i++){
+        //document.write(arr[i],"<br>");
+        document.write("<div class=\"ball ball"+i+"\">"+arr[i]+"</div>");
+    }
+
+    
+</script>
+</head>
+<body>
+    <h2>로또번호 만들기(문제)</h2>
+    <p>1~45까지의 숫자 중 6개를 추출해서 로또만들기</p>
+    <hr>
+    <div class="ball ball0">5</div>
+    <div class="ball ball1">3</div>
+    <div class="ball ball2">27</div>
+    <div class="ball ball3">7</div>
+    <div class="ball ball4">43</div>
+    <div class="ball ball5">28</div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>holy grail layout</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            
+        }
+
+        header {
+            border-bottom: 1px solid gray;
+            padding-left: 20px;
+        }
+
+        footer {
+            border-top: 1px solid gray;
+            text-align: center;
+        }
+        
+        section{
+            display: flex;
+        }
+        
+        nav{
+            border-right: 1px solid gray;
+        }
+        
+        aside{
+            border-left: 1px solid gray;
+        }
+        
+        nav, aside{
+            flex-basis: 100px;
+            flex-shrink: 0;
+        }
+        
+        @media(max-width:500px){
+            section{
+                flex-direction: column;
+                
+            }
+            
+            nav, aside{
+                flex-basis: auto;
+            }
+            
+            aside{
+                display: none;
+            }
+            
+            main{
+                margin: 10px;
+                order: 0;
+            }
+            
+            nav{
+                order: 1;
+                border-top: 1px solid gray;
+                border-right: none;
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>생활코딩 연습하기</h2>
+    </header>
+    <section>
+        <nav>
+            <ul>
+                <li>html</li>
+                <li>css</li>
+                <li>javaScript</li>
+            </ul>
+        </nav>
+        <main> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis veniam totam labore ipsum, nesciunt temporibus repudiandae facilis earum, sunt autem illum quam dolore, quae optio nemo vero quidem animi tempore aliquam voluptas assumenda ipsa voluptates. Illum facere dolor eos, corporis nobis, accusamus velit, similique cum iste unde vero harum voluptatem molestias excepturi. Laborum beatae, aliquid aliquam excepturi pariatur soluta asperiores laudantium iste, architecto ducimus fugiat sed, saepe quaerat recusandae exercitationem sapiente, impedit nostrum error. Doloremque impedit, eos in quos assumenda illo eum dicta. Voluptatum quaerat excepturi consectetur, doloremque esse deleniti commodi natus, maxime sit? Officia rerum quibusdam porro dolorum numquam harum soluta ex quo! Vero, nam? Necessitatibus rem hic perferendis maiores obcaecati voluptate sunt autem id doloribus, similique repudiandae nesciunt vel facere ex accusantium ipsum provident iste itaque? Perferendis culpa nostrum repellendus dolores repudiandae assumenda, tempora laudantium in quibusdam placeat facilis ex voluptatem provident velit iusto fuga eum nobis deserunt enim minus. Explicabo 
+            </main>
+        <aside>
+            <p>광고?</p>
+        </aside>
+    </section>
+    <footer>
+        <a href="#">홈페이지</a>
+    </footer>
+</body></html>

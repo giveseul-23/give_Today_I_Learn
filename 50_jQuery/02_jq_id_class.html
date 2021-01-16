@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>선택자 : id, class</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    
+    <style>
+        .bg-aqua {
+            background-color: paleturquoise;
+        }
+
+        .bg-yellow {
+            background-color: palegoldenrod;
+        }
+
+        .red {
+            color: hotpink;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .blue {
+            color: deepskyblue;
+        }
+
+        .horizontal {
+            float: left;
+            list-style: none;
+            margin: 10px;
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .sizeUp {
+            font-size: 1.5em;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        //제이쿼리 사용으로 문서(document)가 준비된 후 
+        $(function(){
+           //요소(element) 선택자(요소명) : 해당태그 선택
+            //li 태그 찾고 배경색을 노란색으로 변경
+//            $('li').css("background-color","aqua");
+//            $('li').css("background-color","yellow");
+            
+            //클래스명 추가 : addClass()
+            $('li').addClass("bg-yellow");
+            
+            //클래스명으로 선택(.) : 해당 클래스명을 가진 '요소들' 선택
+            $('.js').addClass("bold");
+            
+            //아이디명으로 선택(#) : 해당 아이디명 가진 '요소 하나' 선택
+            $('#jsp').addClass("red");
+            
+            //----------------------
+            //자식, 자손 태그 컨트롤
+            //자식(자녀) 선택(>) : 하위 자녀 요소만 선택
+            $('ul>li').addClass("horizontal");
+            $('hr').addClass("clear");
+            //자손 선택자(빈칸) :  부모태그 + 빈칸 + 찾을 선택자
+            $('div p').addClass("bg-yellow");
+            $('div>p').addClass("sizeUp");
+            
+            //자녀(child) 찾을 때 앞에 위치한 태그에 따라서 다르게 동작
+            $('body>div>p').addClass("blue");
+            
+            //----------------------
+            /*
+                동일속성에 대한 스타일 적용시 동일가중치 클래스명 사용시
+                스타일상에서 나중에 작성된 스타일이 적용된다.
+                //스타일의 우선순위에따라 class가 적용이 안될 수 있음
+            */
+            $('li').addClass("bg-aqua");
+            
+            //적용된 클래스 삭제시
+            $('li').removeClass("bg-yellow");
+        });
+    </script>
+</head>
+
+<body>
+    <ul>
+        <li>Java</li>
+        <li>HTHML5 &amp; CSS</li>
+        <li class="js">JavaScript &amp; jQuery</li>
+        <li id="jsp">Servlet &amp; JSP</li>
+    </ul>
+    <hr>
+    <ol>
+        <li>Java</li>
+        <li>HTHML5 &amp; CSS</li>
+        <li class="js">JavaScript &amp; jQuery</li>
+        <li>Servlet &amp; JSP</li>
+    </ol>
+    <div>
+        <p>div &gt; p태그</p>
+        <div>
+            <span>
+                <p>div-div-span-p태그</p>
+            </span>
+        </div>
+        <div>
+            <p>div-div-p태그</p>
+        </div>
+        <p>div-p태그</p>
+    </div>
+</body></html>

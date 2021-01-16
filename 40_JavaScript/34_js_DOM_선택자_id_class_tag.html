@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM_선택자_id_class_tag</title>
+<style>
+        #title{
+            color: blue;
+        }
+</style>
+</head>
+ 
+<script>
+    /*
+        DOM 객체 선택시 사용할 메서드
+        document.getElementById("id명") : id 속성 요소 1개 리턴
+        document.getElementsTagName("태그명") : 태그명에 해당하는 요소들 리턴(배열형태-여러개라는의미)
+        document.getElementsByClassName('클래스명') : class 속성명에 해당하는 요소들 리턴(배열형태-여러개라는의미)
+        //-----------------
+        document.querySelector("선택자") : 선택자에 해당하는 첫번째 요소(단수)
+        document.querySelectorAll("선택자") : 선택자에 해당하는 모든 요소(복수-배열형태)
+        
+    */
+    
+    //html 요소를 못찾음
+    var title = document.getElementById("title"); //아직 읽고 해석하지 못하 상태
+    console.log("script 시작 지점 title : "+ title); //null값 나옴
+    
+    //onload : 브라우저 문서가 모두 로딩 완료되면 발생하는 이벤트 onload에 콜백함수 작성
+    window.onload = function(){
+        var title = document.getElementById("title");
+        console.log("onload 이벤트 지점 title : " + title);
+        
+        //document.getElementById("title").style.color = "red";
+//        title.style.color = "red";
+//        title.style.backgroundColor = "yellow";
+        
+        //document.getElementsTagName('태그명') :  태그명에 해당하는 요소들 리턴(배열형태)
+        console.log(document.getElementsByTagName("h1")); //HTMLCollection
+        
+        document.getElementsByTagName("h1")[0].style.color = "blue";
+        //배열형태로 리턴하기 때문에 [선택위치]를 같이 입력해서 넣어줘야 함
+        
+        //document.getElementsClassName('클래스명') 
+        var clFoodList = document.getElementsByClassName("foodList");
+        clFoodList[0].style.backgroundColor = "aqua";
+        clFoodList[1].style.backgroundColor = "pink";
+        
+        //-------------------------
+        //id명으로 찾기
+        var div1 = document.getElementById("food_1");
+        div1.style.backgroundColor = "orange";
+        div1.style.border = "2px solid black";
+        
+        
+        //태그명으로 찾기
+        var list = document.getElementsByTagName("li");
+        list[2].style.backgroundColor = "green";
+        
+        //------------------------
+        //체이닝 방식으로 연속작성
+        var foodList = document.getElementById("food_1").getElementsByTagName("li")[1].style.backgroundColor = "gray"; //list 중 불고기 부분
+        
+        //--------------------------
+        //querySelector("선택자") : 선택자의 선택된 첫번째 요소 리턴
+        var selectOne = document.querySelector("div > h2");
+        selectOne.style.backgroundColor = "blue";
+        
+        //querySelectorAll("선택자") : 선택자로 선택된 모든 요소 리턴(배열)
+        var selAll = document.querySelectorAll("div > h2");
+        selAll[0].style.border = "3px solid black";
+        selAll[1].style.border = "3px solid black";
+        
+        for(let i=0; i<selAll.length; i++){
+            selAll[i].style.borderColor = "red";
+        }
+    };
+    
+</script>
+
+<body>
+    <h1>좋아하는 음식</h1>
+    <h2>한식, 중식</h2>
+    <div id="food_1">
+        <h2 id="title" style = "color: aqua">한식</h2>
+        <ol class="foodList">
+            <li><a href="#">김치</a></li>
+            <li><a href="#">불고기</a></li>
+            <li><a href="#">비빔밥</a></li>
+        </ol>
+    </div>
+    <div id="food_2">
+        <h2>양식</h2>
+        <ol class="foodList">
+            <li>돈까스</li>
+            <li>파스타</li>
+        </ol>
+    </div>
+    
+    <script>
+        var title = document.getElementById("title");
+        console.log("body 끝 지점 title : "+ title);
+        title.style.color = "red";
+        title.style.backgroundColor = "yellow";
+        
+    </script>
+</body>
+</html>

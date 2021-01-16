@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        
+        var name = null;
+        var kor = 0;
+        var eng = 0;
+        var math = 0;
+        
+        //alert("이름을 입력하세요 : ");
+        name = window.prompt("이름을 입력하세요","주");
+        kor = parseInt(prompt("국어점수를 입력하세요"));
+        eng = parseInt(prompt("영어점수를 입력하세요"));
+        math = parseInt(prompt("수학점수를 입력하세요"));
+        
+        var sum = kor+eng+math;
+                               
+        document.write("---------------" + "<br>");
+        document.write("이름 : " + name+ "<br>");
+        document.write("국어 : " + kor+ "<br>");
+        document.write("영어 : " + eng+ "<br>");
+        document.write("수학 : " + math+ "<br>");
+        document.write("---------------"+ "<br>");
+        document.write("총점 : " + sum+ "<br>");
+        document.write("평균 : " + (sum/3).toFixed(2)+ "<br>");
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+<script>
+    var now = new Date();
+    
+    var newDay = new Date(2021, 3, 7);
+    
+    document.write("현재 : " + now, "<br>");
+    document.write("d-day : " + newDay, "<br>");
+    
+    var result = newDay.getTime() - now.getTime();
+    result = Math.floor(result/(1000 * 60 * 60 * 24)) * -1;
+    
+    document.write(result);
+</script>
+</head>
+<body>
+    
+</body>
+</html>

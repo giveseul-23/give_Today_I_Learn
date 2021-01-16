@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>논리, 삼항연산자</title>
+<script>
+    //논리연산자 : &&(AND), ||(OR), !(NOT)
+    document.write("<h3>논리연산자 : &&(AND), ||(OR), !(NOT)</h3>");
+    
+    document.write("20 > 10 && 300 > 200 (T AND T): " + (20 > 10 && 300 > 200), "<br>");
+    document.write("20 > 10 && 300 < 200 (T AND F): " + (20 > 10 && 300 < 200), "<br>");
+    document.write("20 < 10 && 300 > 200 (F AND T): " + (20 < 10 && 300 > 200), "<br>");
+    document.write("20 < 10 && 300 < 200 (F AND F): " + (20 < 10 && 300 < 200), "<br>");
+    document.write("<hr>");
+    
+    document.write("20 > 10 || 300 > 200 (T AND T): " + (20 > 10 || 300 > 200), "<br>");
+    document.write("20 > 10 || 300 < 200 (T AND F): " + (20 > 10 || 300 < 200), "<br>");
+    document.write("20 < 10 || 300 > 200 (F AND T): " + (20 < 10 || 300 > 200), "<br>");
+    document.write("20 < 10 || 300 < 200 (F AND F): " + (20 < 10 || 300 < 200), "<br>");
+    document.write("<hr>");
+    
+    document.write("!true : " + !true, "<br>");
+    document.write("!(20>10 && 300>200) : " + !(20>10 && 300>200), "<br>");
+    
+    document.write("!false : " + !false, "<br>");
+    document.write("!(20<10 || 300<200) : " + !(20<10 || 300<200), "<br>");
+    document.write("<hr>");
+    
+    //--------------------------------
+    //삼항연산자 : 조건식 ? 실행문1 : 실행문2;
+    // 실행문1 : 조건식 결과가 true 일 때 실행
+    // 실행문2 : 조건식 결과가 false 일 때 실행
+    document.write("<h3>삼항연산자 : 조건식 ? 실행문1 : 실행문2</h3>");
+    var a = 100;
+    var b = 500;
+    var result = (a > b) ? "a > b" : "a <= b";
+    document.write("a: " + a + ", b: " + b, "<br>");
+    document.write(">> result : " + result);
+    
+</script>
+</head>
+<body>
+</body>
+
+    
+<br><br><br><br><br><br><br><br><br><br><br>    
+<br><br><br><br><br><br><br><br><br><br><br>    
+</html>
+
+
+
+
+
+
+

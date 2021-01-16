@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+<script>
+    /* 인접 관계 선택자
+    parentNode : 부모노드 선택
+    childNodes : 모든 자식 노드들 선택(배열형태 - 태그, 태그 이외 노드 포함)
+    children : 자식 태그 요소들(배열형태 - 태그만)
+    firstChild : 첫번째 자식노드(태그, 태그이외 노드 포함)
+    previousSibling : 이전 형제 노드(태그, 태그이외 노드 포함)
+    nextSibling : 다음 형제 노드(태그, 태그이외 노드 포함)
+    firstElementChild : 첫번째 자녀 요소(태그만)
+    previousElementSibling : 이전 형제 요소(태그만)
+    nextElementSibling : 다음 형제 요소(태그만)
+    ******************************/
+window.onload = function(){
+    //태그내에 빈칸, 리턴, 탭 등이 있는 경우
+    //모두 child Node로 인식(크롬 등) - 브라우저마다 처리방식이 다름
+    var child1 = document.getElementById("div1").firstElementChild;
+    console.log("child1 : " + child1);
+    child1.style.color = "blue";
+    child1.innerHTML = "<em>내용-1 : 변경처리</em>";
+    
+    // p태그 중 2번째 태그
+    var p2 = document.getElementsByTagName("p")[1];
+    p2.style.backgroundColor = "green";
+    
+    // p2(내용-2) 기준으로 동일레벨에서 다음(next) 요소
+    p2.nextElementSibling.style.backgroundColor = "yellow"; //내용-3
+    
+    //============================
+    // 속성 컨트롤
+    var div1 = document.getElementById("div1");
+    //속성값 조회 : getAttribute("속성명")
+    console.log('div1.getAttribute("id") : ' + div1.getAttribute("id"));
+    console.log('div1.getAttribute("title") : ' + div1.getAttribute("title"));
+    
+    //속성값 설정(변경) : setAttribute("속성명", "속성값")
+    div1.setAttribute("title", "변경된 title");
+    console.log('div1.getAttribute("title") : ' + div1.getAttribute("title"));
+    
+    //=====================
+    //children : 자식 태그 요소들(배열형태 - 태그만)
+    var divChildren = document.getElementById("div1").children;
+    console.log(divChildren);
+    console.log("divChildren.length: " + divChildren.length);
+    
+    for (let i=0; i<divChildren.length; i++) {
+        divChildren[i].style.border = "3px solid red";
+    }
+    console.log("div1.innerHTML : " + div1.innerHTML);
+    
+    div1.style.border = "3px dotted orange";
+    div1.style.border = "5px dashed blue";
+    
+    //div1.innerHTML = "<h3>내용없음</h3>";
+};
+    
+</script>
+</head>
+<body>
+    <h2>DOM 인접 관계 선택자</h2>
+    <div id="div1" title="내용묶음div">
+        <p>내용-1</p>
+        <p>내용-2</p>
+        <p>내용-3</p>
+        <p>내용-4</p>
+        <div>
+            <p>div-p 내용-5</p>
+        </div>
+    </div>
+
+    
+<br><br><br><br><br><br><br><br><br><br><br>    
+<br><br><br><br><br><br><br><br><br><br><br>  
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

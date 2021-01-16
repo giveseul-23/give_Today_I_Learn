@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>window 속성, 메소드(함수)</title>
+</head>
+<script>
+    var tv = {
+        width: 1100,
+        heigth: 700,
+        on : function(){
+            console.log("tv전원 on!");
+        },
+        off : function(){
+            console.log("tv전원 off!");
+        }
+    };
+    for(let prop in tv){
+        document.write("tv."+prop+" : " + tv[prop], "<br>");
+    }
+    document.write("<hr><hr>");
+    
+    //window 객체가 가진 속성, 메소드(함수) 확인
+    document.write("<h3>window 객체가 가진 속성, 메소드(함수) 확인</h3>");
+    for(let prop in window){
+        document.write("window."+prop+" : " + window[prop], "<br>");
+    }
+</script>
+<body>
+    
+</body>
+</html>

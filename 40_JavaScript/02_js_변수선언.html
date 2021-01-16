@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 변수선언</title>
+    <script>
+        //변수선언 키워드(명령어) : var, let, const(자바의 final과 동일한 의미)
+        //변수명 사용문자 : 영문대소문자, 숫자, _, $
+        //기본자료형 : 문자열(String), 숫자(number), 불린(boolean)
+        var str = "안녕하세요(문자열)";
+        var num = 100;
+        var bool = true;
+        var vNull = null;
+        var undef;
+        
+        document.write("문자열 출력 : " + str, "<br>");
+        document.write("숫자 출력 : " + num, "<br>");
+        document.write("boolean 출력 : " + bool, "<br>");
+        document.write("널 값 출력 : " + vNull, "<br>");
+        document.write("undef 값 출력 : " + undef, "<br>");
+        document.write("<hr>")
+        
+        //변수 타입 확인 : typeof
+        document.write("typeof str : " + typeof str,"<br>"); //string
+        document.write("typeof num : " + typeof num,"<br>") //number
+        document.write("typeof bool : " + typeof bool,"<br>") //boolean
+        document.write("typeof vNull : " + typeof vNull,"<br>") //object
+        document.write("typeof undef : " + typeof undef,"<br>") //undefined
+        document.write("<hr>")
+        
+        //변수에 고정된 타입의 개념이 없음(모든 데이터 저장 가능)
+        str = 500; //내용은 언제든지 바꿀수 있음
+        str = str + 200;
+        document.write("type of str : " + typeof str + ", str의 값 : " + str, "<br>");
+        
+        str = true;
+        document.write("type of str : " + typeof str + ", str의 값 : " + str, "<br>");
+        
+        var sum = num + str;
+        document.write("type of str : " + typeof sum + ", str의 값 : " + sum, "<br>"); 
+        //true의 값은 : 1
+        
+        sum = num + false;
+        document.write("type of str : " + typeof sum + ", str의 값 : " + sum, "<br>");
+        //false의 값은 : 0
+        
+        str = "안녕" + 500; //문자 + 숫자 = String
+        document.write("type of str : " + typeof str + ", str의 값 : " + str, "<br>");
+        
+        
+        document.write("<hr>");
+        
+        //NaN(Not a Number) :  숫자가 아님 - 연산결과가 숫자가 아닌 경우
+        document.write("num + undef : " + (num + undef), "<br>"); //100 + undefined의 결과값은 NaN
+        document.write("num * 'A' : " + (num * 'A'), "<br>"); //숫자 곱하기 문자열은 NaN
+        
+        
+        //자바스크립트에서 오류가 발생하면 이후의 스크립트는 실행 안됨(오류시점부터)
+        document.write(">>>> 자바스크립트 작성 끝", "<br>");
+        document.write("<P>#########################</p>")
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

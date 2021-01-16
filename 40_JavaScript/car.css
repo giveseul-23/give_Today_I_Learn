@@ -1,0 +1,19 @@
+*{
+        text-align: center;
+    }
+table{
+    margin: 0 auto;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td{
+    border: 1px solid black;
+}
+th, #totalTxt{
+    background-color: gray;
+}
+#total{
+    background-color: white;
+    border: 0px;
+    font-size: 17px;
+}

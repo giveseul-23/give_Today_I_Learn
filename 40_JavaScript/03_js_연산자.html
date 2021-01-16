@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS 연산자</title>
+    <script>
+        //증감 연산자 ++ --
+        var num = 100;
+        document.write("num : "+num, "<br>");
+        
+        //전위연산자
+        //num 값을 1을 증가시키고 res에 저장
+        var res = ++num; 
+        document.write("(res = ++num) : "+res, "<br>");
+        document.write("num : "+num, "<br>");
+        document.write("<hr>"); 
+        
+        var num = 100; //var 사용시 변수 중복선언 가능(let은 중복선언되지 않음)
+        document.write("num : "+num, "<br>");
+        
+        //후위연산자
+        //num 값이 연산에 먼저 참여하고 후에 1증가 처리됨 
+        res = num++; 
+        document.write("(res = num++) : "+res, "<br>"); //100 먼저 전달됨
+        document.write("num : "+num, "<br>"); //그 후 1이 증가됨
+        document.write("<hr>");
+        
+        //----------------------------------
+        //부정연산자 : !(NOT) 
+        document.write("true : "+true, "<br>");
+        document.write("!true : "+!true, "<br>"); //false
+        document.write("!false : "+!false, "<br>"); //true
+        document.write("<hr>");
+        
+        //산술연산자 : +, -, *, /, %
+        var num1 = 100;
+        var num2 = 3;
+        document.write("num1 : " + num1, ", num2 : "+num2, "<br>");
+        document.write("num1+num2 : " + (num1+num2), "<br>");
+        document.write("num1-num2 : " + (num1-num2), "<br>");
+        document.write("num1*num2 : " + (num1*num2), "<br>");
+        document.write("num1/num2 : " + (num1/num2), "<br>"); //33.333333333333336
+        document.write("num1%num2 : " + (num1%num2), "<br>");
+        document.write("<hr>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS : if, switch</title>
+    <script>
+        //if(조건식){ 실행문 }
+        //if(조건식) { true 실행문 } else { false 실행문 }
+        //if(조건식) { } else if {  } else if { } else { }
+        /*
+        if(true){
+            document.write("if문이 true인 경우 출력", "<br>");
+        }
+        let bool = confirm("true출력 <확인> 선택, false출력 <취소> 선택");
+        if(bool){
+            document.write("<확인> 선택");
+        }else{
+            document.write("<취소> 선택");
+        }
+        document.write("<hr>");
+        */
+        //-----------------------------
+        /*
+            실습 : 점수를 입력받고, 점수에 따라 평가하고 결과 화면출력
+            90 이상 : A, 80 이상 : B, 70 이상 : C, 70 미만 : D
+            출력형태 : 점수 90 - 평가결과 : A
+        */
+        let score = parseInt(window.prompt("점수를 입력하세요."));
+        alert(score + " isNaN() : " + isNaN(score));
+        //isNaN 숫자인지 아닌지 판별하는 메서드
+        
+        let grade = "D";
+        
+        if(score>=90){
+            grade = "A";
+        }else if(score>=80){
+            grade = "B";
+        }else if(score>=70){
+            grade = "C";
+        }
+        
+        document.write("점수 " + score +" - 평가결과 : " + grade);
+        //------------------
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
