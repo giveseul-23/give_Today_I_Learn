@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <style>
+        a{
+            font-size : 3rem;
+            display : inline-block;
+            /*
+                all은 active 에서 할 수 있는 모든 효과
+                transform 이라 하면 transform 의 효과만 transiton되고
+                font-size만 하면 transform과 동일
+                all말고 font-size transform 이렇게 복수효과를 낼 수있도록 적을 수도 있음
+
+            transition-property : all;
+            transition-duration : 1s;
+
+            transition : all 0.1s;
+            */
+            transition : font-size 1s, transform 0.1s;
+        }
+        a:active{
+            transform : translate(20px, 20px);
+            font-size : 2rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="#">click</a>
+</body>
+</html>

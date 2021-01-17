@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transition</title>
+    <style>
+        body{
+            background-color : black;
+            transition : all 1s;
+        }
+        div{
+            background-color : black;
+            color : white;
+            padding : 10px;
+            width : 100px;
+            height : 50px;
+            transition: all 500ms cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+            transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+        }
+
+        div:hover{
+            height : 400px;
+        }
+    </style>
+    <script>
+       window.onload = function(){
+            document.querySelector('body').style.backgroundColor='white';
+       }
+    </script>
+</head>
+<body>
+    <div>
+        TRANSITION
+    </div>
+</body>
+</html>
