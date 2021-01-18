@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트 실행순서</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        var order = 1;
+        console.log(order++ + ": 자바스크립트 시작 첫번째 실행문" + $('#test').text() + "::");
+
+        $(document).ready(function() {
+            //시작하자마자 시작되느 실행문
+            console.log(order++ + ": 자바스크립트 시작 첫번째 실행문 head 안 " + $('#test').text() + "::");
+
+            $('#btn').click(function() {
+                console.log(order++ + ": btn click 이벤트 시작 " + $('#test').text() + "::");
+
+                call();
+
+                console.log(order++ + ": btn click 이벤트 끝 " + $('#test').text() + "::");
+            })
+        })
+
+        function call() {
+            console.log(order++ + ": function call() 내부 실행문" + $('#test').text() + "::");
+        }
+
+        call();
+
+        console.log(order++ + ": head 끝나기 전 실행문" + $('#test').text() + "::");
+    </script>
+</head>
+
+<body>
+    <h2>initEvent</h2>
+    <button id="btn">함수호출</button>
+    <!--클릭시 call() 함수 호출-->
+    <button onclick="call()">call function</button>
+    <p id="test">p태그 문장</p>
+
+    <script>
+        console.log(order++ + ": 자바스크립트 시작 첫번째 html 안 실행문" + $('#test').text() + "::");
+    </script>
+</body></html>

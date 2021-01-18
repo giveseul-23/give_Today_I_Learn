@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>요소 추가</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            //prepend() : 자녀 태그 추가 - 맨 앞쪽
+            $('#myDiv').prepend('<p>(앞1)반갑습니당(prepend)</p>');
+            $('#myDiv').prepend('<p>(앞2)반갑습니당(prepend)</p>');
+            //prepend는 나중에 적을수록 더 앞으로 나옴
+            
+            
+            //append() : 자녀 태그 추가 - 맨 뒤쪽
+            $('#myDiv').append('<p>(뒤1)반갑습니닷(append)</p>');
+            $('#myDiv').append('<p>(뒤2)반갑습니닷(append)</p>');
+            //prepend는 나중에 적을수록 더 뒤로 나옴
+            
+            //before(), after() : 전과 후에 태그추가 - 기준이 $('이 부분')
+            $('#myDiv').before('<p>1 반갑다리(before)</p>');
+            $('#myDiv').before('<p>2 반갑다리(before)</p>');
+            $('#myDiv').before('<p>3 반갑다리(before)</p>');
+            //before는 나중에 적을수록 그 기준에 바로 근접한 앞쪽으로 나옴
+            
+            $('#myDiv').after('<p>1 반갑다리(after)</p>');
+            $('#myDiv').after('<p>2 반갑다리(after)</p>');
+            $('#myDiv').after('<p>3 반갑다리(after)</p>');
+            //after 나중에 적을수록 그 기준에 바로 근접한 뒤쪽으로 나옴
+            
+            
+            //---------------------------
+            //h2태그 앞에 h1 태그 추가하고, 뒤쪽에 p태그 추가
+            $('h2').before("<h1>개발자과정(before)</h1>");
+            $('h2').after("<h1>개발자과정(after)</h1>");
+            
+            //-------------------------------------
+            //wrap() : 바깥쪽에 감싸는 태그 추가
+            $('h2').wrap("<em>");
+            
+            //<a> 태그를 목록으로 감싸고, ul에 넣기
+            $('a').wrap("<li>");
+            $('li').first().before("<ul id='menu'>");
+            //$('#menu').html($('li'));
+            $('#menu').append($('li'));
+        });
+    </script>
+    <style>
+        h2{
+            border: 2px  solid tomato;
+        }
+        
+        #myDiv{
+            border:  3px solid deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <h2>Java web 프로그래밍 관련</h2>
+    <a href="#">Java</a>
+    <a href="#">JavaScript</a>
+    <a href="#">JSP</a>
+    <a href="#">Spring</a>
+    <hr>
+    <p class="myClass">1장~~~~~</p>
+    <div>내용.....</div>
+    
+    <p class="myClass">2장~~~~~</p>
+    <div>내용.....</div>
+    
+    <p class="myClass">3장~~~~~</p>
+    <div>내용.....</div>
+    
+    <hr>
+    
+    <div id="myDiv">
+        <p>안녕하세요</p>
+        <p>반갑습니다</p>
+        <p>또만나요~</p>
+    </div>
+</body>
+</html>
