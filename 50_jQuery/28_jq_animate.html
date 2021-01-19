@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            //animate(속성값, 밀리초) : 위치만큼 이동(밀리초 동안)
+            $("#go").click(function(){
+               $("#myDiv").animate({
+                   left : 200,
+                   top : 200
+               }, 3000) 
+            });
+            
+            $("#back").click(function(){
+               $("#myDiv").animate({
+                   left : 10,
+                   top : 50
+               }, 3000) 
+            });
+            
+            $("#stop").click(function(){
+               $("#myDiv").stop(); 
+            });
+        })
+    </script>
+    <style>
+        #myDiv{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <button id="go">move</button>
+    <button id="back">back</button>
+    <button id="stop">stop</button>
+    <hr>
+    <div id="myDiv">
+        <img src="images/image1.gif">
+    </div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>이벤트 연결</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>    
+<script>
+    var subject = ["Java", "HTML", "CSS", "JavaScript", "jQuery"];
+    var index = 0;
+    var timer = null;
+    
+    function displaySubject() {
+        $("#myDiv").html(subject[index++]);
+        if (index >= subject.length) index = 0;
+    }
+    function start() {
+        console.log(">>start() 실행");
+        if (timer == null) {
+            timer = setInterval(displaySubject, 1000); //반복해서할일, 간격(밀리초)
+        }
+    }
+    function stop() {
+        console.log(">>stop() 실행")
+        clearInterval(timer);
+        timer = null; //다시 start 될 것을 위해 null 처리를 해준다.
+    }
+    
+    //jQuery 사용 이벤트 연결
+    $(document).ready(function(){
+        console.log(">> jQuery document ready 실행~");
+        /*
+        $("#startJQ").click(function(){
+            console.log(">>start() 실행");
+        });
+        */
+        $("#startJQ").click(start); //실행할 함수를 파라미터로 전달
+        //$("#stopJQ").click(stop);
+        
+        $("#stopJQ").on("click", stop);
+    });
+    
+    //JavaScript 사용 이벤트 연결 처리
+    window.onload = function(){
+        console.log(">> window onload 실행~");
+        var startJS = document.getElementById("startJS");
+        var stopJS = document.getElementById("stopJS");
+        
+        //이벤트 연결 방식 2종류
+        //방식1 : onclick 속성에 함수 설정
+        //startJS.onclick = start; //onclick 이벤트에 start 함수 설정
+        //stopJS.onclick = stop;
+        
+        //방식2 : addEventLisener 메소드 사용방식
+        startJS.addEventListener("click", start);
+        stopJS.addEventListener("click", stop);
+    };
+</script>
+</head>
+<body>
+    <!-- HTML 인라인방식으로 이벤트 연결 -->
+    <button onclick="start()">목록보여주기(HTML 이벤트 연결)</button>
+    <button onclick="stop()">중지(HTML 이벤트 연결)</button>
+    
+    <!-- jQuery 사용 동적 이벤트 연결 -->
+    <button id="startJQ">목록보여주기(JQ 이벤트 연결)</button>
+    <button id="stopJQ">중지(JQ 이벤트 연결)</button>
+    
+    <!-- JavaScript 사용 동적 이벤트 연결 -->
+    <button id="startJS">목록보여주기(JS 이벤트 연결)</button>
+    <button id="stopJS">중지(JS 이벤트 연결)</button>
+    
+    <hr>
+    <p>Java, HTML, CSS, JavaScript, jQuery</p>
+    <hr>
+    <div id="myDiv">Java</div>
+
+    
+<br><br><br><br><br><br><br><br><br><br><br>    
+<br><br><br><br><br><br><br><br><br><br><br>  
+</body>
+</html>
+
+
+
+
+

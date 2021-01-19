@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>timer 객체</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>    
+<script>
+    //1초마다 Java, HTML, CSS, JavaScript, jQuery 문자열을 순차적으로 화면 표시
+    // 배열에 저장해서 사용
+    $(document).ready(function(){
+        var subject = ["Java", "HTML", "CSS", "JavaScript", "jQuery"];
+        var index = 0;
+        var timer = setInterval(function(){
+            console.log("index : " + index);
+            //#myDiv 영역에 출력
+            $("#myDiv").html(subject[index++]);
+            
+            //인덱스번호 초기화 : 데이터 갯수와 일치 또는 크면
+            if (index >= subject.length) {
+                index = 0;
+            }
+        }, 1000);
+        
+        //중지 버튼이 클릭되면 과목 보여주기 중지 처리
+        $("#stop").click(function(){
+            console.log(">> timer 동작 중지");
+            clearInterval(timer);
+        });
+    });
+</script>
+</head>
+<body>
+    <button id="stop">중지</button>
+    <!-- Java, HTML, CSS, JavaScript, jQuery -->
+    <p>Java, HTML, CSS, JavaScript, jQuery</p>
+    <hr>
+    <div id="myDiv">Java</div>
+
+    
+<br><br><br><br><br><br><br><br><br><br><br>    
+<br><br><br><br><br><br><br><br><br><br><br>  
+</body>
+</html>

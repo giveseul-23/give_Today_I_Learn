@@ -1,0 +1,127 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>롤링배너</title>
+    <!-- jQuery import 방식2 : CDN -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        #banner-wrap {
+            width: 660px;
+            border: 1px solid #aaa;
+            padding-top: 20px;
+            margin: 50px auto;
+        }
+
+        #frame {
+            width: 660px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #banner {
+            width: 3300px;
+        }
+
+        li img {
+            width: 200px;
+        }
+
+        li {
+            list-style: none;
+            padding: 10px;
+            float: left;
+            width: 200px;
+        }
+
+        #banner-wrap a {
+            text-decoration: none;
+        }
+
+        #banner-wrap>p {
+            text-align: center;
+            clear: both;
+        }
+        
+    </style>
+    <script>
+        $(document).ready(function() {
+            var $list = $("#banner");
+            
+            //$list.css("margin-left", -220 * 3 + "px")
+            
+            //이미지 복사 & 붙여넣기 : 1,2,3 이미지를 맨뒤에 추가
+            $list.append($("#banner>li:lt(3)").clone()); //clone() 복사
+//            $list.prepend($("#banner>li:lt(5)").clone());
+            
+            var clickCnt = 0;
+
+            $("#next").click(function() {
+                clickCnt++;
+                if (clickCnt > 5) { //맨 마지막까지 보여준 경우
+                    clickCnt = 1;
+                    $list.css("margin-left", "0px");
+                }
+
+                console.log("clickCnt : " + clickCnt);
+                $list.animate({
+                    "margin-left": -220 * clickCnt + "px"
+                }, 1000);
+            });
+            
+            //(실습) 개인적으로 실습(내일 아침에 함께)
+            $("#prev").click(function() {
+                clickCnt--;
+                
+                if(clickCnt<0){
+                    clickCnt = 5;
+                    $list.css("margin-left", -220 * clickCnt + "px");
+                }
+                
+                $list.animate({
+                    "margin-left": -220 * clickCnt + "px"
+                }, 1000);
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+    <h2>롤링 슬라이드 배너 만들기</h2>
+    <hr>
+    <div id="banner-wrap">
+        <div id="frame">
+            <ul id="banner">
+                <li><a href="#"><img src="images/pic_1.jpg"></a></li>
+                <li><a href="#"><img src="images/pic_2.jpg"></a></li>
+                <li><a href="#"><img src="images/pic_3.jpg"></a></li>
+                <li><a href="#"><img src="images/pic_4.jpg"></a></li>
+                <li><a href="#"><img src="images/pic_5.jpg"></a></li>
+
+            </ul>
+        </div>
+        <p>
+            <a href="#" id="prev">
+                <img src="images/prev_btn.png">
+            </a>
+            <span id="movetxt">이동하기</span>
+            <a href="#" id="next">
+                <img src="images/next_btn.png">
+            </a>
+        </p>
+    </div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br>
+</body></html>
