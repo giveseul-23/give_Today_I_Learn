@@ -8,7 +8,7 @@
 </head>
 <body>
 <%!
-//실습 - 주문한 내역에 따라 계산하고 결과를 표시
+//실습 - 주문한 내역에 따라 계산하고 결과를 표시 - 수정
 		
 		
 		private String outputName(String coffee){
