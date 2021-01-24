@@ -1,9 +1,9 @@
 package ArrayList;
 
+import dto.*;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import dto.MemberDto;
 
 public class mainClass {
 
@@ -165,7 +165,7 @@ public class mainClass {
 			int age = sc.nextInt();
 			
 			mbd = new MemberDto(num, name, age);
-			
+
 			memlist.add(mbd);
 			
 			w++;
