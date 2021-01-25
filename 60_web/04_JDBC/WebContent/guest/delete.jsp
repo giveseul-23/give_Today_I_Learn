@@ -20,8 +20,20 @@
 		}
 		
 		//3. 실행결과에 따른 페이지 이동처리(list.jsp)
-		if(result >0 ){
-			response.sendRedirect("list.jsp");
+		if(result == 0){ //SQL 정상실행 + 데이터가 삭제되지 않음(없는 번호를 삭제하는 경우)
+			%>
+			<script>
+				alert("[삭제실패] 대상이 없어서 삭제하지 못했습니다."+"\n목록페이지로 이동합니다.")
+				location.href="list.jsp";
+			</script>
+			<% 
+		}else if(result > 0){ //SQL 정상실행 + 데이터가 삭제됨
+			%>
+			<script>
+				alert("[삭제완료] 삭제처리 완료하였습니다."+"\n목록페이지로 이동합니다.")
+				location.href="list.jsp";
+			</script>
+			<% 
 		}
      %>
 <!DOCTYPE html>
@@ -31,6 +43,7 @@
 <title>사원 삭제 실패</title>
 </head>
 <body>
+	<!-- 위에서 result가 0이거나 0보다 큰 경우를 제외한 나머지 경우 아래 페이지가 보이게 함 -->
 	<h1>사원 삭제 실패</h1>
 	<p>삭제처리를 하지 못했습니다.<br>
 	[상세보기] 클릭해서 다시 작업하세요.
@@ -67,7 +80,6 @@
 				pstmt.setInt(1, sabun);
 				//4. SQL 실행
 				result = pstmt.executeUpdate();
-				//5. SQL 실행결과에 대한 처리
 				
 			}catch(Exception e){
 				e.printStackTrace();
@@ -76,6 +88,7 @@
 				try{
 					if(pstmt != null) pstmt.close();
 				}catch(SQLException e) {
+					result = -999; //오류인 경우
 					e.printStackTrace();
 				}try{
 					if(conn != null) conn.close();

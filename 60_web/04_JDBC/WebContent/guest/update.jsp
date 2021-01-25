@@ -8,6 +8,9 @@
 		   - 상세보기, 목록보기 링크 제공
    --%>
    <%
+   		//POST 요청 데이터에 대한 한글처리를 위한 설정
+   		request.setCharacterEncoding("UTF-8");
+   		
  		//1. 파라미터 값 추출
  		int sabun = Integer.parseInt(request.getParameter("sabun"));
  		String name = request.getParameter("name");
@@ -18,14 +21,31 @@
  			//2. 파라미터 값이 정상이면 DB 입력처리
  			result = update(sabun, name, pay);
  		}catch(NumberFormatException e){
- 			System.out.println(">> 급여항목에 잘못된 값이 입력되었습니다.");
+ 			%>
+ 			<script>
+ 				alert("금액에 숫자가 아닌 문자가 입력되었습니다.\n"+"확인 후 다시 입력하세요.");
+ 				history.back();
+ 			</script>
+ 			<% 
  		}
  		
  		//3. 실행결과에 따른 페이지 이동처리(list.jsp)
- 		if(result >0 ){
- 			response.sendRedirect("list.jsp");
- 		}
-   %>
+ 		if(result == 0){ //SQL 정상실행 + 데이터가 수정되지 않음(없는 번호를 수정하는 경우)
+			%>
+			<script>
+				alert("[수정실패] 대상이 없어서 수정하지 못했습니다."+"\n목록페이지로 이동합니다.")
+				location.href="list.jsp";
+			</script>
+			<% 
+		}else if(result > 0){ //SQL 정상실행 + 데이터가 수정됨
+			%>
+			<script>
+				alert("[수정완료] 수정처리 완료하였습니다."+"\n목록페이지로 이동합니다.")
+				location.href="list.jsp";
+			</script>
+			<% 
+		}
+    %>
 <!DOCTYPE html>
 <html>
 <head>
