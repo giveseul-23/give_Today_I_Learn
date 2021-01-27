@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- type="com.bc.mybatis.GuestbookVO" 의 별칭을   gusetbookVO 하겠다는 의미 
+		별칭도 type="com.bc.mybatis.GuestbookVO" 이 방법도 사용 둘 다 가능
+	-->
+	
+	<settings>
+		<!-- NULL값 입력시 NULL로 입력되게 함 -->
+		<setting name="jdbcTypeForNull" value="NULL"/>
+	</settings>	
+  	
+	 <typeAliases>
+	 	<typeAlias type="com.bc.mybatis.GuestbookVO" alias="gusetbookVO"/>
+	 </typeAliases>
+	
+	 <environments default="development">
+	   <environment id="development">
+	     <transactionManager type="JDBC"/>
+	     <dataSource type="POOLED">
+	       <property name="driver" value="oracle.jdbc.OracleDriver"/>
+	       <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+	       <property name="username" value="mystudy"/>
+	       <property name="password" value="mystudypw"/>
+	     </dataSource>
+	   </environment>
+	 </environments>
+	 
+	 
+	 <mappers>
+	   <mapper resource="com/bc/mybatis/mapper.xml"/>
+	 </mappers>
+</configuration>

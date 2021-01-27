@@ -59,7 +59,7 @@
 	  		
 	  		위의 소스를 아래에 액션태그로 나타냄
 	   --%>
-	  <!--  PersonVO "타입"의 객체로 생성되고 person이름의 id로 저장, 스코프 request 객체 저장 -->
+	  <!--  PersonVO "타입"의 객체로 생성되고 person이름의 id로 저장, 자바빈 객체가 저장될 영역을 request으로 지정 -->
 	 <jsp:useBean id="person" class="com.mystudy.PersonVO" scope="request"/>
 	 
 	 
