@@ -1,0 +1,19 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>파일업로드(여러개))</title>
+</head>
+<body>
+	<form action="ex02_result.jsp" method="post" enctype="multipart/form-data">
+		<p>올린사람 : <input type="text" name="name"></p>
+		<p>제목 : <input type="text" name="title"></p>
+		<p>파일1 : <input type="file" name="f_name1"></p>
+		<p>파일2 : <input type="file" name="f_name2"></p>
+		<p>파일3 : <input type="file" name="f_name3"></p>
+		<input type="submit" value="파일업로드">	
+	</form>
+</body>
+</html>
