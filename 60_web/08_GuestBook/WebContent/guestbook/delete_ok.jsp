@@ -17,15 +17,17 @@
 	
 	SqlSession ss = DBService.getFactory().openSession();
 	
-	if(!checkpwd.trim().equals(originpwd)){
+	//암호 일치여부 확인
+	if(!checkpwd.trim().equals(originpwd)){ //암호불일치
 		%>
 		<script type="text/javascript">
 			alert("암호불일치, 이전페이지로 이동합니다.");
 			history.back();
 		</script>
 		<%
+		return; //뒤에문장이 더이상 실행될 필요 x
 	}else{
-		try{
+		try{ //암호가 일치하는 경우 : 삭제처리
 			ss.delete("guestbook.delete", vo.getIdx());
 			ss.commit();
 			%>

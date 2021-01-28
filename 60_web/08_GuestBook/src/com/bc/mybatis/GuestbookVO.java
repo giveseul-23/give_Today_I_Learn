@@ -61,11 +61,11 @@ public class GuestbookVO {
 		this.regdate = regdate;
 	}
 
-//	@Override
-//	public String toString() {
-//		return "GuestbookVO [idx=" + idx + ", name=" + name + ", subject=" + subject + ", content=" + content
-//				+ ", email=" + email + ", pwd=" + pwd + ", regdate=" + regdate + "]";
-//	}
+	@Override
+	public String toString() {
+		return "GuestbookVO [idx=" + idx + ", name=" + name + ", subject=" + subject + ", content=" + content
+				+ ", email=" + email + ", pwd=" + pwd + ", regdate=" + regdate + "]";
+	}
 	
 	
 }
