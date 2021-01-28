@@ -26,5 +26,13 @@
     	VALUES(GUESTBOOK_SEQ.NEXTVAL, #{name}, #{subject}, #{content}, #{email}, #{pwd})
 	</insert>
 	
+	<update id="update" parameterType="gusetbookVO">
+		UPDATE GUESTBOOK SET NAME = #{name}, SUBJECT = #{subject}, CONTENT = #{content}, EMAIL = #{email}, REGDATE = SYSDATE
+		WHERE IDX = #{idx}
+	</update>
 	
+	<delete id="delete" parameterType="String">
+		DELETE FROM GUESTBOOK
+		WHERE IDX = #{idx}
+	</delete>
 </mapper>
