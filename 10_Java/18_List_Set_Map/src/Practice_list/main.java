@@ -22,11 +22,12 @@ public class main {
 			   전체 데이터 다시 화면 출력   
 			**************************/
 		
-		ArrayList<StudentVO> list = new ArrayList<StudentVO>();
+		ArrayList<StudentVO> list;
+		list = new ArrayList<StudentVO>();
 		list.add(new StudentVO("2020111", "홍길동", 100, 90, 81));
 		list.add(new StudentVO("2020222", "이순신", 95, 88, 92));
 		list.add(new StudentVO("2020333", "김유신", 90, 87, 77));
-		
+
 		System.out.println("성명     국어   영어  수학    총점     평균");
 		System.out.println("--------------------------");
 		for (StudentVO vo : list) {
@@ -39,14 +40,14 @@ public class main {
 		
 		for (int i = 0; i < list.size(); i++) {
 			b = list.get(i).getId().equals(id);
-			if(b==true) {
+			if(b) {
 				index = i;
 				break;
 			}
 			
 		}
 		
-		if(b==true) {
+		if(b) {
 			System.out.println(id+"가 list의 "+(index+1)+"위치에 존재합니다");
 			list.get(index).setMath(80);
  			System.out.println(list.toString() + "\n");

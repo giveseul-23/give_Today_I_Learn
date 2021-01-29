@@ -19,8 +19,6 @@ public class MainClass {
 		
 		*/
 		
-		Animal ani1 = an
-		
 	}
 
 }

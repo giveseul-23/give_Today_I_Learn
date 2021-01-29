@@ -9,3 +9,5 @@ out
 gen
 bin
 .gradle
+temp
+uti.zip
