@@ -13,7 +13,10 @@
 <jsp:useBean id="guestbookVO2" class="com.bc.mybatis.GuestbookVO"/>
 <jsp:setProperty property="*" name="guestbookVO2"/>
 <%
-	
+	/*
+		useBean 액션태그 사용시
+		데이터가 로컬변수와 페이지 스코프에 저장되는지 확인
+	*/
 	System.out.println(guestbookVO2);
 	System.out.println(pageContext.getAttribute("guestbookVO2"));
 	

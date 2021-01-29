@@ -40,17 +40,18 @@
 		try{
 			//파일을 읽기 위한 객체 생성
 			fis = new FileInputStream(file);
-			bis = new BufferedInputStream(fis);
+			bis = new BufferedInputStream(fis); 
 			
 			//파일에 쓰기 위한 객체 생성
-			bos = new BufferedOutputStream(response.getOutputStream());
+			bos = new BufferedOutputStream(response.getOutputStream());  
 			
 			//파일로부터 읽고 쓰기
 			int readValue = bis.read(); // -1이면 읽는 부분에 끝부분
 			/* readValue == -1 : 읽을 값이 없다는 의미 */
 			while(readValue != -1){
-				bos.write(readValue);
-				readValue = bis.read();
+				bos.write(readValue); //읽고
+				readValue = bis.read(); //쓰고
+				//읽고 쓰고가 반복됨
 			}
 			bos.flush(); 
 			
