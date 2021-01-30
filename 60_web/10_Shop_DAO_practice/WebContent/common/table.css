@@ -1,0 +1,28 @@
+table{
+	width : 750px;
+	border: 1px solid navy;
+	border-collapse: collapse;
+	margin : 0 auto;
+}
+tr, th, td{
+	border : 1px solid navy;
+}
+
+th{
+	background-color: gray;
+	color : white;
+	padding : 10px;
+	
+}
+
+td{
+	text-align: center;
+	padding : 10px;
+}
+
+td a:hover{
+	color : blue;
+	text-decoration: underline;
+}
+
+.red{color : red;}

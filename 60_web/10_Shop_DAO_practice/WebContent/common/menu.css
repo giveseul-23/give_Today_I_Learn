@@ -1,0 +1,34 @@
+*{
+		margin : 0;
+		padding : 0;
+}
+#container{
+	width : 600px;
+	margin : 0 auto;
+	padding-top: 10px;
+}
+#container hr{
+	height : 2px;
+	background-color: navy;
+	color : navy;
+	
+}
+#container h1{ 
+	text-align : center;
+	padding : 20px;	
+}
+
+#containerA{ 
+	width : 280px;
+	margin : 0 auto;
+	padding : 20px;	
+}
+#container p{
+	display : inline-block;
+	padding-right: 20px;
+}
+#containerA p a{
+	text-decoration: none;
+	color : navy;
+	font-size : 1.3em;
+}
