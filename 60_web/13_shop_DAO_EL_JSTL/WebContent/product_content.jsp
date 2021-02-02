@@ -3,17 +3,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%-- 전달받은 제품번호를 사용해서 DB데이터 조회 후 화면 표시 --%>
-<%
-	//전달 받은 값 추출(파라미터 값)
-	String p_num = request.getParameter("p_num");
-%>
 	<%-- 액션태그 useBean scope 상에 id명 속성값이 
 		있으면 사용하고, 없으면 클래스 속성 타입의 객체 생성 + scope 등록--%>
 	<jsp:useBean id="dao" class="com.bc.mybatis.ShopDAO" scope="session" />
 <%
-	//DAO 객체(인스턴스) 사용해서 제품정보 조회 후 VO에 저장
-	ShopVO vo = dao.selectOne(p_num);
-	pageContext.setAttribute("product", vo);
+	//전달 받은 값 추출(파라미터 값)
+	String p_num = request.getParameter("p_num");
+	pageContext.setAttribute("product", dao.selectOne(p_num));
 %>
 
 

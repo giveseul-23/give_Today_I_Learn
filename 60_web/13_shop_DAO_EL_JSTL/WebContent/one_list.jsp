@@ -47,7 +47,7 @@
 			<tr>
 		</thead>
 		<tbody>
-			
+	<%-- <c:if test="${plist.size()-1}"> --%>
 	<c:if test="${not empty plist }">
 		<c:forEach var="product" items="${plist }">
 			<tr>

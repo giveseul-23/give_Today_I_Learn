@@ -6,11 +6,15 @@
 <%-- 장바구니(cart)에 있는 제품목록을 화면에 표시  --%>
 
 <jsp:useBean id="cart" class="com.bc.mybatis.Cart" scope="session"/>
+<c:set var="list" value="${cart.getList() }"/>
 <%
 	//카트에서 목록 꺼내기
 	List<ShopVO> list = cart.getList();
-	pageContext.setAttribute("pcart", cart);
 	pageContext.setAttribute("plist", list);
+	
+	/* 사실 지금 여기서는 별도로 page 객체에 저장할 필요없이 카트를 세션에 넣었기때문에
+		아래에 내용을 cart.list 이렇게 해서 써도 된다.
+	*/
 %>
 <!DOCTYPE html>
 <html>
@@ -85,7 +89,7 @@
 		</tbody>
 		<tfoot>
 			<tr>
-				<td colspan="6">총 결제금액 : ${pcart.getTotal()}</td>
+				<td colspan="6">총 결제금액 : ${cart.getTotal()}</td>
 			</tr>
 		</tfoot>
 	</table>
