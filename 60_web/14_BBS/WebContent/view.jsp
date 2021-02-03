@@ -18,9 +18,11 @@
 	String cPage = request.getParameter("cPage");
 	
 	//1. 게시글 조회수 1증가(실습)
+	String hit = DAO.updateHit(b_idx) + "";
 	
-	//2. 게시글(b_idx) 데이터 조회 후 화면 표시
+	//2. 게시글(b_idx) 데이 터 조회 후 화면 표시
 	BBSVO bvo = DAO.selectOne(b_idx);
+	bvo.setHit(hit);
 	System.out.println(">> view bv : " + bvo);
 	
 	//3. 게시글(b_idx)에 딸린 댓글이 있으면 화면표시(검색, 찾기)
@@ -52,6 +54,7 @@
 		document.frm.action = "list.jsp";
 		document.frm.submit();
 	}
+	
 </script>
 <style type="text/css">
 	#bbs table {
@@ -126,12 +129,11 @@
 	<hr>
 	
 <%-- 게시글에 대한 댓글 작성 영역 --%>
-<form action="ans_write_ok.jsp" method="post">
+<form action="ans_write_ok.jsp" method="post" name="comm">
 	<p>이름 : <input type="text" name="writer">
 		비밀번호 : <input type="password" name="pwd"></p>
 	<p>내용 : <textarea name="content" rows="4" cols="55"></textarea>
-		<% //TODO%>
-		<input type="submit" value="댓글저장" style="margin:10px;"> <!-- 실습 -->
+		<input type="submit" value="댓글저장" style="margin:10px;" name="submit"> <!-- 실습 -->
 		<input type="hidden" name="b_idx" value="${bvo.b_idx }">
 	</p>
 </form>
@@ -159,4 +161,18 @@
 	</div>
 	
 </body>
+<script type="text/javascript">
+		var comm = document.forms.comm;
+		console.log(comm.elements.length);
+		
+		comm.submit.onclick = function(){
+		    for(var i=0; i<comm.elements.length; i++){
+		        if(comm.elements[i].value.trim() == ""){
+		            alert("내용을 모두 입력 해 주세요.");
+		            comm.elements[i].focus();
+		            return false;
+			    }
+			}
+		}
+</script>
 </html>

@@ -5,13 +5,11 @@ public class CommVO {
 			write_date, ip,	b_idx;
 
 	public CommVO() { }
-	public CommVO(String c_idx, String writer, String content, String pwd, String write_date, String ip, String b_idx) {
+	public CommVO(String writer, String content, String pwd, String ip, String b_idx) {
 		super();
-		this.c_idx = c_idx;
 		this.writer = writer;
 		this.content = content;
 		this.pwd = pwd;
-		this.write_date = write_date;
 		this.ip = ip;
 		this.b_idx = b_idx;
 	}

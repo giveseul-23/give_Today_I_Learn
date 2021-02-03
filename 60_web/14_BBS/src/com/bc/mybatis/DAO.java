@@ -44,10 +44,12 @@ public class DAO {
 	}
 	
 	//조회수 증가 처리
-	public static int updateHit(int b_idx) {
-		//TODO
+	public static int updateHit(String b_idx) {
+		SqlSession ss = DBService.getFactory().openSession(true);
+		int hit = ss.update("BBS.hit", b_idx);
+		ss.close();
 		
-		return 0;
+		return hit;
 	}
 	
 	//============= 댓글관련 ================
@@ -61,8 +63,8 @@ public class DAO {
 	
 	//댓글입력
 	public static int insertComment(CommVO cvo) {
-		//TODO
-		
-		return 0;
+		SqlSession ss = DBService.getFactory().openSession(true);
+		int result = ss.insert("BBS.c_insert", cvo);
+		return result;
 	}
 }

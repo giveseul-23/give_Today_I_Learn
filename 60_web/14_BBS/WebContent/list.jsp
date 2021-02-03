@@ -179,7 +179,7 @@
 							</td>
 							<td>${vo.writer }</td>
 							<td>${vo.write_date.substring(0,10) }</td>
-							<td>0${vo.hit }</td>
+							<td>${vo.hit }</td>
 						</tr>
 					</c:forEach>
 				</c:if>

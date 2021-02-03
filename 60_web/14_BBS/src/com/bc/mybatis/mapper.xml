@@ -48,8 +48,10 @@
 	</insert>
 	
 	<!-- 조회수 1증가 처리 -->
-	<update id="hit" parameterType="int">
-		
+	<update id="hit" parameterType="String">
+		UPDATE BBS_T
+		SET HIT = HIT + 1
+		WHERE B_IDX = #{b_idx}
 	</update>
 	
 	<!-- =========댓글처리========== -->
@@ -63,7 +65,8 @@
 	
 	<!-- 댓글입력 -->
 	<insert id="c_insert" parameterType="com.bc.mybatis.CommVO">
-		
+		INSERT INTO COMMENT_T(C_IDX, WRITER, CONTENT, PWD, WRITE_DATE, IP, B_IDX)
+		VALUES(COMMENT_T_SEQ.NEXTVAL, #{writer}, #{content}, #{pwd}, SYSDATE, #{ip}, #{b_idx})
 	</insert>
 	
 </mapper>
