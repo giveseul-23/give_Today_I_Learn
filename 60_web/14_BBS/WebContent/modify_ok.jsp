@@ -4,6 +4,7 @@
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%-- 전달받은 데이터를 사용해서 DB데이터 수정후 상세페이지로 이동 --%>
 <%
 	request.setCharacterEncoding("utf-8");
 
@@ -15,14 +16,12 @@
 			"utf-8", new DefaultFileRenamePolicy()
 	);
 	
-	//전달받은 데이터 VO에 저장후 DB에 입력처리(DB연동 작업)
+	//사용할 데이터 준비
 	BBSVO bvo = (BBSVO)session.getAttribute("bvo");
-	System.out.println("modify : "+bvo);
 	
 	bvo.setSubject(mr.getParameter("subject"));
 	bvo.setWriter(mr.getParameter("writer"));
 	bvo.setContent(mr.getParameter("content"));
-	
 	bvo.setIp(request.getRemoteAddr());
 	
 	//첨부파일 처리
@@ -34,9 +33,9 @@
 		bvo.setOri_name("");
 	}
 	
-	//DB에 입력(저장) 처리
+	//DB에 수정 처리
 	DAO.update(bvo);
 	
-	//화면전환(목록페이지로 이동)
-	response.sendRedirect("list.jsp");
+	//화면전환(상세페이지로 이동)
+	response.sendRedirect("view.jsp?b_idx="+bvo.getB_idx()+"&cPage="+session.getAttribute("cPage"));
 %>

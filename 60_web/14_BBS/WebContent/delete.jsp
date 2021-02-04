@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>삭제화면</title>
+<title>삭제(암호확인)</title>
 </head>
 <body>
 	<form action="delete_ok.jsp" method="post">
@@ -21,7 +21,8 @@
 		var form = document.forms[0];
 		if(form.pwd.value != '${bvo.pwd}'){
 			alert("비밀번호가 상이합니다. 확인 해주세요.");
-			history.back();
+			form.pwd.value="";
+			form.pwd.focus();
 			return false;
 		}
 	}
