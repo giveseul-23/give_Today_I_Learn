@@ -36,7 +36,7 @@
 			<tbody>
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="title"></td>
+					<td><input type="text" name="subject"></td>
 				</tr>
 				<tr>
 					<th>작성자</th>
@@ -44,7 +44,7 @@
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea rows="5" cols="50"></textarea></td>
+					<td><textarea rows="5" cols="50" name="content"></textarea></td>
 				</tr>
 				<tr>
 					<th>파일</th>

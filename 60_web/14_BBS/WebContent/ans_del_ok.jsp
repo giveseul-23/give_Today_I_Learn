@@ -1,17 +1,13 @@
 <%@page import="com.bc.mybatis.DAO"%>
-<%@page import="java.util.HashMap"%>
-<%@page import="java.util.Map"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+	request.setCharacterEncoding("utf-8");
+	
 	String c_idx = request.getParameter("c_idx");
 	String b_idx = request.getParameter("b_idx");
 	
-	Map<String, String> map = new HashMap<>();
-	map.put("c_idx",c_idx);
-	map.put("b_idx",b_idx);
-	
-	int result = DAO.deleteComment(map);
+	int result = DAO.deleteComment(c_idx);
 	
 	if(result < 1){
 		%>

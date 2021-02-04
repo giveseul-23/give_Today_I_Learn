@@ -4,11 +4,18 @@
     pageEncoding="UTF-8"%>
 <% 
 	request.setCharacterEncoding("utf-8");	
-
+	
+	/*  내가 한 풀이
 	CommVO cvo = new CommVO(request.getParameter("writer"), request.getParameter("pwd"), 
 			request.getParameter("content"), request.getRemoteAddr(), request.getParameter("b_idx"));
-	
-	
+	*/
+%>
+	<!-- 선생님 풀이 -->
+	<jsp:useBean id="cvo" class="com.bc.mybatis.CommVO"/>
+	<jsp:setProperty property="*" name="cvo"/>
+<% 	
+	cvo.setIp(request.getRemoteAddr());
+
 	int result = DAO.insertComment(cvo);
 	
 	if(result < 1){%>

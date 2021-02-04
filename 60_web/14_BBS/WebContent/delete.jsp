@@ -22,6 +22,7 @@
 		if(form.pwd.value != '${bvo.pwd}'){
 			alert("비밀번호가 상이합니다. 확인 해주세요.");
 			history.back();
+			return false;
 		}
 	}
 </script>
