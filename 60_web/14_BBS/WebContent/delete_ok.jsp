@@ -26,6 +26,7 @@
 	}else{%>
 		<script type="text/javascript">
 			alert("댓글이 존재합니다.\n상세보기로 되돌아갑니다.");
+			//history.go(-2);
 			location.href="view.jsp?b_idx=<%=b_idx %>&cPage=${cPage}";
 		</script>
 <%
