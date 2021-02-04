@@ -10,7 +10,10 @@
 	</select>
 	
 	<!-- 부서코드로 직원 조회 -->
-	
+	<select id="e_list" parameterType="String" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT * FROM EMPLOYEES
+			WHERE DEPARTMENT_ID = #{depno}
+	</select>
 </mapper>
 
 

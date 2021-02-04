@@ -16,4 +16,13 @@ public class DAO {
 		
 		return list;
 	}
+	
+	//부서번호 직원조회
+	public static List<EmployeeVO> getE_List(String deptno){
+		SqlSession  ss = DBService.getFactory().openSession();
+		List<EmployeeVO> list = ss.selectList("HR.e_list", deptno);
+		ss.close();
+		
+		return list;
+	}
 }
