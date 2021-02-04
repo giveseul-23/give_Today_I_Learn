@@ -47,6 +47,23 @@
 			, #{pwd}, SYSDATE, #{ip}, 0)
 	</insert>
 	
+	<!-- 게시글 수정처리 -->
+	<update id="update">
+		
+	</update>
+	
+	<!-- 게시글 삭제처리 -->
+	<!-- 게시글 내 댓글있는 확인 -->
+	<select id="checkComment" parameterType="String" resultType="com.bc.mybatis.CommVO">
+		SELECT * FROM COMMENT_T
+		WHERE B_IDX = #{b_idx};
+	</select>
+	<!-- 게시글 삭제 -->
+	<delete id="delete" parameterType="String">
+		DELETE FROM BBS_T
+		WHERE B_IDX = #{b_idx}
+	</delete>
+	
 	<!-- 조회수 1증가 처리 -->
 	<update id="hit" parameterType="String">
 		UPDATE BBS_T
@@ -68,6 +85,12 @@
 		INSERT INTO COMMENT_T(C_IDX, WRITER, CONTENT, PWD, WRITE_DATE, IP, B_IDX)
 		VALUES(COMMENT_T_SEQ.NEXTVAL, #{writer}, #{content}, #{pwd}, SYSDATE, #{ip}, #{b_idx})
 	</insert>
+	
+	<!-- 댓글삭제 -->
+	<delete id="c_delete" parameterType="hashmap">
+		DELETE FROM COMMENT_T
+		WHERE B_IDX = #{b_idx} AND C_IDX = #{c_idx}
+	</delete>
 	
 </mapper>
 

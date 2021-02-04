@@ -144,7 +144,7 @@
 <%-- 게시글에 작성된 댓글 표시 영역 --%>
 <c:forEach var="commVO" items="${c_list }">
 	<div class="comment">
-		<form action="ans_del.jsp" method="get">
+		<form action="ans_del.jsp" method="post">
 			<p>이름 : ${commVO.writer }&nbsp; 날짜 : ${commVO.write_date }</p>
 			<p>내용 : ${commVO.content }</p>
 			<input type="submit" value="댓글삭제">

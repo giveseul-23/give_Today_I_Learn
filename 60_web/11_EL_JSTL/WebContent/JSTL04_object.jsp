@@ -19,7 +19,7 @@
 		System.out.println("local person : " + person);
 	
 		//page객체 person
-		System.out.println("page person : " + pageContext.getAttribute("person"));
+		//System.out.println("page person : " + pageContext.getAttribute("person"));
 	%>
 	
 	<p>person : ${person }</p>
