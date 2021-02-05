@@ -1,6 +1,8 @@
 package com.bc.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
@@ -25,4 +27,27 @@ public class DAO {
 		
 		return list;
 	}
+	
+	//이름으로 직원조회
+	public static List<EmployeeVO> getFullname(String fullname){
+		SqlSession  ss = DBService.getFactory().openSession();
+		List<EmployeeVO> list = ss.selectList("HR.fullnameList", fullname);
+		ss.close();
+		
+		return list;
+	}
+	
+	//동적검색
+	public static List<EmployeeVO> getSearch(String idx, String keyword){
+		Map<String, String> map = new HashMap<String, String>();
+		map.put("idx", idx);
+		map.put("keyword", keyword);
+		
+		SqlSession  ss = DBService.getFactory().openSession();
+		List<EmployeeVO> list = ss.selectList("HR.search", map);
+		ss.close();
+		
+		return list;
+	}
+	
 }

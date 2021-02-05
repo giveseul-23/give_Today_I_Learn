@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="HR">
+	
+	<!-- 전체직원 목록조회  -->
+	<select id="list" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT * FROM EMPLOYEES ORDER BY EMPLOYEE_ID
+	</select>
+	
+	<!-- 부서코드로 직원 조회 -->
+	<select id="e_list" parameterType="String" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT * FROM EMPLOYEES
+			WHERE DEPARTMENT_ID = #{depno}
+	</select>
+	
+	<!-- 이름으로 검색  -->
+	<select id="fullnameList" parameterType="String" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT *
+		 FROM EMPLOYEES
+		WHERE FIRST_NAME = INITCAP(#{fullname})
+		 OR LAST_NAME = INITCAP(#{fullname})
+		ORDER BY EMPLOYEE_ID
+	</select>
+	
+	<!-- 동적검색 -->
+	<select id="search" parameterType="map" resultType="com.bc.model.vo.EmployeeVO">
+		SELECT *
+		 FROM EMPLOYEES
+		<choose>
+			<when test="idx == 0">
+				WHERE EMPLOYEE_ID = #{keyword}
+			</when>
+			<when test="idx == 1">
+				WHERE FIRST_NAME = INITCAP(#{keyword})
+					OR LAST_NAME = INITCAP(#{keyword})
+			</when>
+			<when test="idx == 2">
+				WHERE JOB_ID = INITCAP(#{keyword})
+			</when>
+			<when test="idx == 3">
+				WHERE department_id = #{keyword}
+			</when>
+			<otherwise>
+				WHERE 1 = 2 <!-- 데이터 검색 아예 하지 못하게 함 -->
+			</otherwise>
+		</choose>
+		ORDER BY EMPLOYEE_ID
+	</select>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
