@@ -17,6 +17,7 @@
 	
 	<!-- 이름으로 검색  -->
 	<select id="fullnameList" parameterType="String" resultType="com.bc.model.vo.EmployeeVO">
+	<!-- INITCAP -> 소문자 대문자 구분없이 조회할 수 있게끔 함  -->
 		SELECT *
 		 FROM EMPLOYEES
 		WHERE FIRST_NAME = INITCAP(#{fullname})
