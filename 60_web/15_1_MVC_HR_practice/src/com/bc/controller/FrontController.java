@@ -11,6 +11,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.bc.common.Common;
+import com.bc.common.DeptCommon;
+import com.bc.common.DeptListCommon;
+import com.bc.common.NameCommon;
+import com.bc.common.NameListCommon;
+import com.bc.common.SearchCommon;
+import com.bc.common.allListCommon;
 import com.bc.model.DAO;
 import com.bc.model.vo.EmployeeVO;
 
@@ -23,71 +30,39 @@ public class FrontController extends HttpServlet {
 		
 		System.out.println(type);
 		
-		List<EmployeeVO> list;
+		String path = ""; 
+		Common comm;
 		
 		if("all".equals(type)) {
-			list = DAO.getAllList();
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("allList.jsp").forward(request, response);
+			comm = new allListCommon();
+			path = comm.execute(request, response);
+			
+			request.getRequestDispatcher(path).forward(request, response);
 			
 		}else if("dept".equals(type)) {
-			request.getRequestDispatcher("dept.jsp").forward(request, response);
+			comm = new DeptCommon();
+			path = comm.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
 			
 		}else if("deptList".equals(type)) {
-			System.out.println("FrontController deptList 실행중" );
-			String deptno = request.getParameter("deptno");
-			list = DAO.getDeptList(deptno);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("deptList.jsp").forward(request, response);
+			comm = new DeptListCommon();
+			path = comm.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
 			
 		}else if("name".equals(type)) {
-			request.getRequestDispatcher("name.jsp").forward(request, response);
+			comm = new NameCommon();
+			path = comm.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
 			  
 		}else if("nameList".equals(type)) {
-			String name = request.getParameter("name");
-			list = DAO.getNameList(name);
-			request.setAttribute("list", list);
-			request.getRequestDispatcher("nameList.jsp").forward(request, response);
+			comm = new NameListCommon();
+			path = comm.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
 			
 		}else if("search".equals(type)) {
-			String idx = request.getParameter("idx");
-			String keyword = request.getParameter("keyword");
-			
-			if(keyword == null || keyword.trim().equals("")) {
-				//입력칸이 빈 경우
-				request.getRequestDispatcher("search.jsp").forward(request, response);
-			}else {
-				Map<String, String> map = new HashMap<String, String>();
-				map.put("idx", idx);
-				map.put("keyword", keyword);
-				
-				String title = "";
-				switch (idx) {
-					case "0": {
-						title = "사번";
-						break;
-					}
-					case "1": {
-						title = "이름";
-						break;
-					}
-					case "2": {
-						title = "직종";
-						break;
-					}
-					case "3": {
-						title = "부서";
-						break;
-					}
-				}
-				
-				list = DAO.getSearchList(map);
-				
-				request.setAttribute("title", title);
-				request.setAttribute("list", list);
-				
-				request.getRequestDispatcher("searchList.jsp").forward(request, response);
-			}
+			comm = new SearchCommon();
+			path = comm.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
 		}
 		
 	}
