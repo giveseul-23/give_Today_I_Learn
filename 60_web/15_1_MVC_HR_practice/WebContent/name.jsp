@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>이름조회 검색</h2>
-	<form action="nameList">
+	<form action="frontcontroller?type=nameList" method="post">
 		이름 : <input type="text" name="name">
 		<input type="submit" value="검색">
 	</form>

@@ -7,19 +7,19 @@
 <title>메인메뉴</title>
 <script type="text/javascript">
 	function all_go(){
-		frm.action="all";
+		frm.action="frontcontroller?type=all";
 		frm.submit();
 	}
 	function dept_go(){
-		frm.action="dept";
+		frm.action="frontcontroller?type=dept";
 		frm.submit();
 	}
 	function name_go(){
-		frm.action="name";
+		frm.action="frontcontroller?type=name";
 		frm.submit();
 	}
 	function search_go(){
-		frm.action="search";
+		frm.action="frontcontroller?type=search";
 		frm.submit();
 	}
 </script>
