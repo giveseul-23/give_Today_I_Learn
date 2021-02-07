@@ -31,40 +31,24 @@ public class FrontController extends HttpServlet {
 		System.out.println(type);
 		
 		String path = ""; 
-		Common comm;
+		Common comm = null;
 		
 		if("all".equals(type)) {
 			comm = new allListCommon();
-			path = comm.execute(request, response);
-			
-			request.getRequestDispatcher(path).forward(request, response);
-			
 		}else if("dept".equals(type)) {
 			comm = new DeptCommon();
-			path = comm.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
-			
 		}else if("deptList".equals(type)) {
 			comm = new DeptListCommon();
-			path = comm.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
-			
 		}else if("name".equals(type)) {
 			comm = new NameCommon();
-			path = comm.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
-			  
 		}else if("nameList".equals(type)) {
 			comm = new NameListCommon();
-			path = comm.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
-			
 		}else if("search".equals(type)) {
 			comm = new SearchCommon();
-			path = comm.execute(request, response);
-			request.getRequestDispatcher(path).forward(request, response);
 		}
 		
+		path = comm.execute(request, response);
+		request.getRequestDispatcher(path).forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
