@@ -32,7 +32,7 @@
 					var output ="";
 					
 					output += "<h2>" + result.id + "</h2>";
-					output += "<h2>" + result.name + "</h2>";
+					output += "<h2>" + result["name"] + "</h2>";
 					
 					//HTML 출력 영역에 표시
 					$("#dataDisp").html(output);

@@ -1,0 +1,357 @@
+-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- member Table Create SQL
+CREATE TABLE member
+(
+    ID          VARCHAR2(20)     NOT NULL, 
+    PASSWORD    VARCHAR2(20)     NOT NULL, 
+    NAME        VARCHAR2(20)     NOT NULL, 
+    BIRTH       VARCHAR2(20)     NOT NULL, 
+    PHONNUM     VARCHAR2(20)     NOT NULL, 
+    ADDR        VARCHAR2(120)    NULL, 
+    EMAIL       VARCHAR2(60)     NULL, 
+    CONSTRAINT MEMBER_PK PRIMARY KEY (ID)
+)
+/
+
+--추가연습(무시)
+INSERT INTO member(ID, PASSWORD, NAME, BIRTH, PHONNUM)
+VALUES('giveseul1', '12345', '주1', '2021-02-09', '01095235069');
+
+SELECT * FROM MEMBER;
+
+UPDATE member
+SET PASSWORD = '1234'
+WHERE ID = 'giveseul1';
+
+DELETE FROM member
+WHERE ID = 'giveseul1';
+
+
+SELECT * FROM LOG;
+
+
+COMMENT ON COLUMN member.ID IS '아이디'
+/
+
+COMMENT ON COLUMN member.PASSWORD IS '비밀번호'
+/
+
+COMMENT ON COLUMN member.NAME IS '이름'
+/
+
+COMMENT ON COLUMN member.BIRTH IS '생년월일'
+/
+
+COMMENT ON COLUMN member.PHONNUM IS '핸드폰번호'
+/
+
+COMMENT ON COLUMN member.ADDR IS '주소'
+/
+
+COMMENT ON COLUMN member.EMAIL IS '이메일'
+/
+
+
+-- member Table Create SQL
+CREATE TABLE p_list
+(
+    SALE_ID         VARCHAR2(20)     NOT NULL, 
+    PURCHASE_ID     VARCHAR2(20)     NULL, 
+    PICTURE         VARCHAR2(20)     NOT NULL, 
+    AMOUNT          VARCHAR2(20)     NOT NULL, 
+    P_CODE          NUMBER(7)        NOT NULL, 
+    P_TITLE         VARCHAR2(20)     NOT NULL, 
+    P_CONTENTS      VARCHAR2(500)    NULL, 
+    STATUS          VARCHAR2(20)     NOT NULL, 
+    CATEGORIES      VARCHAR2(20)     NOT NULL, 
+    AREA            VARCHAR2(20)     NOT NULL, 
+    P_INQUIRY       VARCHAR2(20)     NOT NULL, 
+    LIKEIT_COUNT    NUMBER(3)        NULL, 
+    CONSTRAINT P_LIST_PK PRIMARY KEY (PURCHASE_ID, P_CODE)
+)
+/
+
+--P_CODE 시퀀스 생성
+CREATE SEQUENCE  P_SEQUENCE
+   MINVALUE 1 MAXVALUE 99999999999999999999999
+   INCREMENT BY 1
+   START WITH 1
+   CACHE 20 NOORDER  NOCYCLE ;
+
+-- 상품후기(REVIEW) 컬럼 추가
+ALTER TABLE P_LIST 
+ADD (REVIEW VARCHAR2(200) );
+
+
+--추가연습(무시)
+INSERT INTO p_list(SALE_ID, PURCHASE_ID, PICTURE, AMOUNT, P_CODE
+, P_TITLE, P_CONTENTS, STATUS, CATEGORIES, AREA, P_INQUIRY, LIKEIT_COUNT)
+VALUES('giveseul', 'giveseul', 'img.jpg', '30001', P_SEQUENCE.NEXTVAL, 'G', 'G', 'G', 'G', 'G', 'G', 10);
+
+COMMENT ON COLUMN p_list.SALE_ID IS '판매자_아이디'
+/
+
+COMMENT ON COLUMN p_list.PURCHASE_ID IS '구매자_아이디'
+/
+
+COMMENT ON COLUMN p_list.PICTURE IS '사진'
+/
+
+COMMENT ON COLUMN p_list.AMOUNT IS '금액'
+/
+
+COMMENT ON COLUMN p_list.P_CODE IS '제품 코드'
+/
+
+COMMENT ON COLUMN p_list.P_TITLE IS '상품 제목'
+/
+
+COMMENT ON COLUMN p_list.P_CONTENTS IS '상품 내용'
+/
+
+COMMENT ON COLUMN p_list.STATUS IS '판매 상태'
+/
+
+COMMENT ON COLUMN p_list.CATEGORIES IS '카테고리'
+/
+
+COMMENT ON COLUMN p_list.AREA IS '지역'
+/
+
+COMMENT ON COLUMN p_list.P_INQUIRY IS '1:1문의'
+/
+
+COMMENT ON COLUMN p_list.LIKEIT_COUNT IS '찜하기_갯수'
+/
+
+ALTER TABLE p_list
+    ADD CONSTRAINT FK_p_list_SALE_ID_member_ID FOREIGN KEY (SALE_ID)
+        REFERENCES member (ID)
+/
+
+ALTER TABLE p_list
+    ADD CONSTRAINT FK_p_list_PURCHASE_ID_member_I FOREIGN KEY (PURCHASE_ID)
+        REFERENCES member (ID)
+/
+
+
+-- member Table Create SQL
+CREATE TABLE p_inquiry
+(
+    P_INQUIRYCODE     NUMBER(7)        NOT NULL, 
+    P_CODE            NUMBER(7)        NOT NULL, 
+    PASSWORD          VARCHAR2(20)     NOT NULL, 
+    ID                VARCHAR2(20)     NOT NULL, 
+    INQUIRYTITLE      VARCHAR2(20)     NOT NULL, 
+    INQUIRYCONTENT    VARCHAR2(500)    NOT NULL, 
+    REGDATE           VARCHAR2(20)     NOT NULL, 
+    CONSTRAINT P_INQUIRY_PK PRIMARY KEY (P_INQUIRYCODE)
+)
+/
+
+--P_CODE 시퀀스 생성
+CREATE SEQUENCE  P_INQUIRY_SEQUENCE
+   MINVALUE 1 MAXVALUE 99999999999999999999999
+   INCREMENT BY 1
+   START WITH 2001
+   CACHE 20 NOORDER  NOCYCLE ;
+
+COMMENT ON COLUMN p_inquiry.P_INQUIRYCODE IS '1:1문의 코드'
+/
+
+COMMENT ON COLUMN p_inquiry.P_CODE IS '제품코드'
+/
+
+COMMENT ON COLUMN p_inquiry.PASSWORD IS '비밀번호'
+/
+
+COMMENT ON COLUMN p_inquiry.ID IS '아이디'
+/
+
+COMMENT ON COLUMN p_inquiry.INQUIRYTITLE IS '문의 제목'
+/
+
+COMMENT ON COLUMN p_inquiry.INQUIRYCONTENT IS '문의 내용'
+/
+
+COMMENT ON COLUMN p_inquiry.REGDATE IS '날짜'
+/
+
+ALTER TABLE p_inquiry
+    ADD CONSTRAINT FK_p_inquiry_P_CODE_p_list_P_C FOREIGN KEY (P_CODE)
+        REFERENCES p_list (P_CODE)
+/
+
+ALTER TABLE p_inquiry
+    ADD CONSTRAINT FK_p_inquiry_ID_member_ID FOREIGN KEY (ID)
+        REFERENCES member (ID)
+/
+
+
+-- member Table Create SQL
+CREATE TABLE likeit
+(
+    PURCHASE_ID    VARCHAR2(20)    NULL, 
+    LIKEIT_STAT    NUMBER(3)       NOT NULL, 
+    P_CODE         NUMBER(7)       NULL   
+)
+/
+
+COMMENT ON COLUMN likeit.PURCHASE_ID IS '구매자_아이디'
+/
+
+COMMENT ON COLUMN likeit.LIKEIT_STAT IS '찜하기_여부'
+/
+
+COMMENT ON COLUMN likeit.P_CODE IS '제품코드'
+/
+
+ALTER TABLE likeit
+    ADD CONSTRAINT FK_likeit_PURCHASE_ID_p_list_P FOREIGN KEY (PURCHASE_ID, P_CODE)
+        REFERENCES p_list (PURCHASE_ID, P_CODE)
+/
+
+
+-- member Table Create SQL
+CREATE TABLE board
+(
+    B_CODE        NUMBER(7)        NOT NULL,
+    ID            VARCHAR2(20)     NOT NULL, 
+    B_CATEGORY    VARCHAR2(20)     NOT NULL, 
+    B_TITLE       VARCHAR2(20)     NOT NULL, 
+    B_CONTENTS    VARCHAR2(500)    NOT NULL, 
+    PASSWORD      VARCHAR2(20)     NOT NULL
+)
+/
+
+--P_CODE 시퀀스 생성
+CREATE SEQUENCE  B_SEQUENCE
+   MINVALUE 1 MAXVALUE 99999999999999999999999
+   INCREMENT BY 1
+   START WITH 4001
+   CACHE 20 NOORDER  NOCYCLE ;
+
+COMMENT ON COLUMN board.B_CODE IS '게시판 번호'
+/
+
+COMMENT ON COLUMN board.ID IS '아이디'
+/
+
+COMMENT ON COLUMN board.B_CATEGORY IS '게시글 종류'
+/
+
+COMMENT ON COLUMN board.B_TITLE IS '게시판 제목'
+/
+
+COMMENT ON COLUMN board.B_CONTENTS IS '게시판 내용'
+/
+
+COMMENT ON COLUMN board.PASSWORD IS '비밀번호'
+/
+
+ALTER TABLE board
+    ADD CONSTRAINT FK_board_ID_member_ID FOREIGN KEY (ID)
+        REFERENCES member (ID)
+/
+
+
+-- member Table Create SQL
+CREATE TABLE log
+(
+    ID          VARCHAR2(20)     NOT NULL, 
+    PASSWORD    VARCHAR2(20)     NULL, 
+    NAME        VARCHAR2(20)     NULL, 
+    BIRTH       VARCHAR2(20)     NULL, 
+    PHONNUM     VARCHAR2(20)     NULL, 
+    ADDR        VARCHAR2(120)    NULL, 
+    EMAIL       VARCHAR2(60)     NULL, 
+    REGDATE     VARCHAR2(20)     NULL, 
+    LOGMODE     VARCHAR2(20)     NULL, 
+    CONSTRAINT LOG_PK PRIMARY KEY (ID)
+)
+/
+
+-- 용량수정
+ALTER TABLE LOG  
+MODIFY (PASSWORD VARCHAR2(50 BYTE) );
+
+ALTER TABLE LOG  
+MODIFY (PHONNUM VARCHAR2(100 BYTE) );
+
+ALTER TABLE LOG  
+MODIFY (ADDR VARCHAR2(300 BYTE) );
+
+ALTER TABLE LOG  
+MODIFY (EMAIL VARCHAR2(120 BYTE) );
+
+-- PK키 수정
+ALTER TABLE LOG 
+DROP CONSTRAINT LOG_PK;
+
+-- REGDATE DEFAULT SYSDATE
+ALTER TABLE LOG  
+MODIFY (REGDATE DEFAULT SYSDATE );
+
+--트리거 작성
+create or replace TRIGGER AFTER_MEMBER_IUD
+    AFTER INSERT OR UPDATE OR DELETE ON MEMBER
+    FOR EACH ROW
+
+BEGIN 
+    -- INSERT 이벤트가 발생한 경우 로그 남기기
+    IF INSERTING THEN
+        INSERT INTO LOG
+                                                -- JOB_GUBUN은 인서트작업이 이뤄졌는지를 구분하기 위한 컬럼명
+            (ID, PASSWORD, NAME, BIRTH, PHONNUM, ADDR, EMAIL, LOGMODE) -- LOGDATE 는 DEFAULT 값을 줬기때문에 적지 않는다
+        VALUES (:NEW.ID, :NEW.PASSWORD, :NEW.NAME, :NEW.BIRTH, :NEW.PHONNUM, :NEW.ADDR, :NEW.EMAIL, '회원가입');
+    END IF;
+    
+    -- UPDATE 이벤트가 발생한 경우 로그 남기기
+    IF UPDATING THEN
+        INSERT INTO LOG
+            (ID, PASSWORD, PHONNUM, ADDR, EMAIL, LOGMODE)
+        VALUES (:OLD.ID
+            , :OLD.PASSWORD || ' -> ' || :NEW.PASSWORD
+            , :OLD.PHONNUM  || ' -> ' || :NEW.PHONNUM
+            , :OLD.ADDR  || ' -> ' || :NEW.ADDR
+            , :OLD.EMAIL  || ' -> ' || :NEW.EMAIL
+            , '회원수정'
+            );
+    END IF;
+    
+    IF DELETING THEN
+        INSERT INTO LOG
+                 (ID, PASSWORD, NAME, BIRTH, PHONNUM, ADDR, EMAIL, LOGMODE)
+        VALUES (:OLD.ID, :OLD.PASSWORD, :OLD.NAME, :OLD.BIRTH, :OLD.PHONNUM, :OLD.ADDR, :OLD.EMAIL, '회원삭제');
+    END IF;
+END;
+
+COMMENT ON COLUMN log.ID IS '아이디'
+/
+
+COMMENT ON COLUMN log.PASSWORD IS '비밀번호'
+/
+
+COMMENT ON COLUMN log.NAME IS '이름'
+/
+
+COMMENT ON COLUMN log.BIRTH IS '생년월일'
+/
+
+COMMENT ON COLUMN log.PHONNUM IS '핸드폰번호'
+/
+
+COMMENT ON COLUMN log.ADDR IS '주소'
+/
+
+COMMENT ON COLUMN log.EMAIL IS '이메일'
+/
+
+COMMENT ON COLUMN log.REGDATE IS '날짜'
+/
+
+COMMENT ON COLUMN log.LOGMODE IS '모드'
+/
+
+

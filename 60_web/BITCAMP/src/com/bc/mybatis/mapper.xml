@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pList">
+	<!-- 메인페이지 상품 리스트 조회  -->
+	<select id="select" resultType="com.bc.model.vo.PListVO" parameterType="Map">
+		SELECT P_TITLE as P_TITLE, PRICE as PRICE, PICTURE01 as PICTURE01, COMMON_NAME AS COMMON_NAME
+		FROM(SELECT ROWNUM AS R_NUM, P.*
+		    FROM(SELECT * 
+		            FROM P_LIST P INNER JOIN COMMON C
+		            ON P.LOCATION = C.COMMON_CODE
+		            ORDER BY P_NO DESC
+		    ) P
+		)
+		WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 메인페이지 상품 리스트 개수  -->
+	<select id="totalCount" resultType="Integer" parameterType="String">
+		SELECT COUNT(*) FROM P_LIST
+	</select>
+	
+	<!-- 메인페이지 검색 상품 리스트 조회  -->
+	<select id="searchSelect" resultType="com.bc.model.vo.PListVO" parameterType="Map">
+		SELECT P_TITLE as P_TITLE, PRICE as PRICE, PICTURE01 as PICTURE01, COMMON_NAME AS COMMON_NAME, LOCATION
+		FROM(SELECT ROWNUM AS R_NUM, P.*
+		    FROM(SELECT * 
+		            FROM P_LIST P INNER JOIN COMMON C
+		            ON P.LOCATION = C.COMMON_CODE
+		            WHERE P_TITLE LIKE '%'||#{word}||'%'
+		            ORDER BY P_NO DESC
+		    ) P
+		)
+		WHERE R_NUM BETWEEN #{begin} AND #{end}
+	</select>
+	
+	<!-- 메인페이지 검색 상품 리스트 개수  -->
+	<select id="searchTotalCount" resultType="Integer" parameterType="String">
+		SELECT COUNT(*) FROM P_LIST
+		WHERE P_TITLE LIKE '%'||#{word}||'%'
+	</select>
+</mapper>
+
+
+
+
+
+
