@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.websocket.Session;
 
 import com.bc.model.SelectDAO;
-import com.bc.model.command.Commond;
+import com.bc.model.command.Command;
 import com.bc.model.command.MainCommand;
 import com.bc.model.vo.PListVO;
 import com.bc.model.vo.Paging; 
@@ -22,7 +22,7 @@ import com.bc.model.vo.Paging;
 public class MainController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Commond comm;
+		Command comm;
 		comm = new MainCommand();
 		String path = comm.execute(request, response);
 		request.getRequestDispatcher(path).forward(request, response);

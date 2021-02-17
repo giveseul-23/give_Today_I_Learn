@@ -27,7 +27,7 @@
             <div id="logo"><a href="bitmarket" target="_self"><img src="../img/logo.PNG" alt="logo"></a></div>
             <div id="mainMenu">
                 <a href="#"><img src="../img/sales.png" alt="상품등록"><p>상품등록</p></a>
-                <a href="#"><img src="../img/Login.png" alt="로그인"><p>로그인</p></a>
+                <a href="../Login/login.jsp"><img src="../img/Login.png" alt="로그인"><p>로그인</p></a>
             </div>
         </header> 
         <nav>

@@ -7,26 +7,62 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class MainController
- */
-@WebServlet("/Login")
+import com.bc.model.command.Command;
+import com.bc.model.command.FindIdCommand;
+import com.bc.model.command.FindId_OkCommand;
+import com.bc.model.command.FindPwdCommand;
+import com.bc.model.command.FindPwd_OkCommand;
+import com.bc.model.command.JoinCheckCommand;
+import com.bc.model.command.JoinCommand;
+import com.bc.model.command.LoginCommand;
+
+@WebServlet("main/Login/loginController")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println(">>loginController 실행");
+		String type = request.getParameter("type");
+		System.out.println("type: " + type);
+		
+		Command command = null;
+		
+		if("join".equals(type)) {
+			command = new JoinCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		
+		} else if("joinCheck".equals(type)) {
+			command = new JoinCheckCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		} else if("findId".equals(type)) {
+			command = new FindIdCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);	
+		} else if("findId_Ok".equals(type)) {
+			command = new FindId_OkCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		} else if("findPwd".equals(type)) {
+			command = new FindPwdCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		} else if("findPwd_Ok".equals(type)) {
+			command = new FindPwd_OkCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		} else if("login".equals(type)) {
+			command = new LoginCommand();
+			String path = command.execute(request, response);
+			request.getRequestDispatcher(path).forward(request, response);
+		}
+		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		System.out.println(">> loginController doPost() 실행");
+		request.setCharacterEncoding("utf-8");
 		doGet(request, response);
 	}
 

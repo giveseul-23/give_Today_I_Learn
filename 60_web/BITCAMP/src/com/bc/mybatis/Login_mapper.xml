@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	
+	<insert id="joinInsert" parameterType ="com.bc.model.vo.MemberVO">
+		INSERT INTO MEMBER(ID, PASSWORD, NAME, YEAR, MONTH, DAY, PHONNUM, LOCATION, EMAIL, JOINDATE, PROFILE_IMG)
+		VALUES (#{id}, #{password}, #{name}, #{year}, #{month}, #{day}, #{phonnum}, #{location}, #{email}, TO_CHAR(SYSDATE, 'YYYY-MM-DD'), #{profile_img})	
+	</insert>
+	
+	<select id="findId" parameterType="Map" resultType=
+	"com.bc.model.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE NAME = #{name}
+		AND PHONNUM = #{phonnum}
+	</select>
+	
+	<select id="findPwd" parameterType="Map" resultType="com.bc.model.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id}
+		AND EMAIL = #{email}
+	</select>
+	
+	<select id="login" parameterType="Map" resultType="com.bc.model.vo.MemberVO">
+		SELECT * FROM MEMBER
+		WHERE ID = #{id}
+		AND PASSWORD = #{password}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+

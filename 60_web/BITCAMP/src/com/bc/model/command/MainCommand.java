@@ -13,7 +13,7 @@ import com.bc.model.SelectDAO;
 import com.bc.model.vo.PListVO;
 import com.bc.model.vo.Paging;
 
-public class MainCommand implements Commond {
+public class MainCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)

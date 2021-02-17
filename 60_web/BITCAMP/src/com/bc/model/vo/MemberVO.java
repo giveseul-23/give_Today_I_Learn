@@ -1,23 +1,28 @@
 package com.bc.model.vo;
 
 public class MemberVO {
-	private String id, password, name, birth, phonnum;
+	private String id, password, name, year, month, day, phonnum;
 	private String location, email, joindate, profile_img;
 	
-	public MemberVO() { }
+	public MemberVO() { }	
 
-	public MemberVO(String id, String password, String name, String birth, String phonnum, String location,
-			String email, String joindate, String profile_img) {
+	public MemberVO(String id, String password, String name, String year, String month, String day, String phonnum,
+			String location, String email, String joindate, String profile_img) {
+		super();
 		this.id = id;
 		this.password = password;
 		this.name = name;
-		this.birth = birth;
+		this.year = year;
+		this.month = month;
+		this.day = day;
 		this.phonnum = phonnum;
 		this.location = location;
 		this.email = email;
 		this.joindate = joindate;
 		this.profile_img = profile_img;
 	}
+
+
 
 	public String getId() {
 		return id;
@@ -42,13 +47,29 @@ public class MemberVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public String getBirth() {
-		return birth;
+	
+	public String getYear() {
+		return year;
 	}
 
-	public void setBirth(String birth) {
-		this.birth = birth;
+	public void setYear(String year) {
+		this.year = year;
+	}
+
+	public String getMonth() {
+		return month;
+	}
+
+	public void setMonth(String month) {
+		this.month = month;
+	}
+
+	public String getDay() {
+		return day;
+	}
+
+	public void setDay(String day) {
+		this.day = day;
 	}
 
 	public String getPhonnum() {
@@ -89,6 +110,13 @@ public class MemberVO {
 
 	public void setProfile_img(String profile_img) {
 		this.profile_img = profile_img;
+	}
+
+	@Override
+	public String toString() {
+		return "MemberVO [id=" + id + ", password=" + password + ", name=" + name + ", year=" + year + ", month="
+				+ month + ", day=" + day + ", phonnum=" + phonnum + ", location=" + location + ", email=" + email
+				+ ", joindate=" + joindate + ", profile_img=" + profile_img + "]";
 	}
 	
 	

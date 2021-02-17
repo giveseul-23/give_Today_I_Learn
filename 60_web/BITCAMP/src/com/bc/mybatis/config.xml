@@ -22,7 +22,8 @@
   
   
   <mappers>
-    <mapper resource="com/bc/mybatis/mapper.xml"/>
+    <mapper resource="com/bc/mybatis/Main_mapper.xml"/>
+    <mapper resource="com/bc/mybatis/Login_mapper.xml"/>
   </mappers>
 </configuration>
 

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bc.model.SelectDAO;
 import com.bc.model.vo.PListVO;
 
-public class PListCommand implements Commond {
+public class PListCommand implements Command {
 
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
