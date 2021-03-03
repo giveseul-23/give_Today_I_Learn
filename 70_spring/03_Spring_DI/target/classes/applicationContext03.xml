@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- set메소드(setter)를 이용한 의존주입(DI) -->
+	<bean id="tv3tvSamsung" class="polymorphism03.SamsungTV">
+		<property name="speaker" ref="sony3" />
+		<property name="price" value="1000" />
+		<property name="width" value="100" />
+		<property name="height" value="200" />
+	</bean>
+	<bean id="sony3" class="polymorphism03.SonySpeaker"/>
+	
+	<!-- 태그 방식이 아닌 속성방식으로도 사용가능 -->
+	<!-- "namespace에서 p설정 추가 후 작성" -->
+	<bean id="tv3tvSamsung2" class="polymorphism03.SamsungTV"
+		p:speaker-ref="sony3" p:price="4560000"
+		p:height="100" p:width="200"/>
+		<!-- 참조형 객체(like sony3)이 있으면 p:speaker-ref="" 를 사용한다. -->
+		<!-- 값만 작성할 때는 필드명만 작성한다. price와 같은 것들... -->
+	
+</beans>
