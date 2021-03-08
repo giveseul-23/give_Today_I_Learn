@@ -14,7 +14,7 @@
 		<org.slf4j-version>1.6.6</org.slf4j-version>
 	</properties>
 	<dependencies>
-		<!-- 스프링JDBC ㅅ용을 위한 라이브러리 등록(시작) -->
+		<!-- 스프링JDBC 사용을 위한 라이브러리 등록(시작) -->
 		<!-- spring-jdbc, common-dbcp 라이브러리 등록 -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -22,11 +22,14 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 
-		<dependency>
+		<!----><dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>1.4</version>
 		</dependency>
+
+
+		<!-- 스프링JDBC 사용을 위한 라이브러리 등록(끝) -->
 
 		<!-- 오라클 드라이버 등록  -->
 		<dependency>

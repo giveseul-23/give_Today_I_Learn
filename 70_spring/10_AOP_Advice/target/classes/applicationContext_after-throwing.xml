@@ -21,7 +21,7 @@
 		<!-- 작업설정(연결) -->
 		<aop:aspect ref="afterThrowing">
 			<!-- 핵심관심 메소드 예외발생시 afterReturnLog 메소드 실행 -->
-			<aop:before method="exceptionLog" pointcut-ref="allPointcut"/>
+			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut"/>
 		</aop:aspect>
 	</aop:config>
 </beans>

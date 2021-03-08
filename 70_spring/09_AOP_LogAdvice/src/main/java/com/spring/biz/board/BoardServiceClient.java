@@ -18,11 +18,11 @@ public class BoardServiceClient {
 		BoardService boardService = (BoardService) container.getBean("boardService");
 		
 		//데이터 입력 
-		BoardVO vo = new BoardVO();
-		vo.setTitle("테스트");
-		vo.setWriter("테스터");
-		vo.setContent("테스트중");
-		boardService.insertBoard(vo);
+//		BoardVO vo = new BoardVO();
+//		vo.setTitle("테스트");
+//		vo.setWriter("테스터");
+//		vo.setContent("테스트중");
+//		boardService.insertBoard(vo);
 		
 		//전체 데이터 조회
 		List<BoardVO> list = boardService.getboBoardList();
