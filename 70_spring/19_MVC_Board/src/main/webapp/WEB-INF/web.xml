@@ -4,11 +4,11 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          id="WebApp_ID" version="3.1">
   <servlet>
-    <servlet-name>DisplatcherServlet</servlet-name>
-    <servlet-class>com.spring.biz.view.controller.DisplatcherServlet</servlet-class>
+    <servlet-name>DispatcherServlet</servlet-name>
+    <servlet-class>com.spring.biz.view.controller.DispatcherServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>DisplatcherServlet</servlet-name>
+    <servlet-name>DispatcherServlet</servlet-name>
     <url-pattern>*.do</url-pattern>
   </servlet-mapping> 
 </web-app>

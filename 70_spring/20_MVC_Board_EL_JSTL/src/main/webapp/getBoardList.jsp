@@ -56,19 +56,26 @@
 			<th width="150">작성일</th>
 			<th width="100">조회수</th>
 		</tr>
-		<c:forEach var ="board" items="${sessionScope.boardList}">
+		<c:if test="${empty boardList }">
 			<tr>
-				<td class="center">${board.seq}</td>
-				<td>
-					<a href="getBoard.do?seq=${board.seq}">
-						${board.title}
-					</a>
-				</td>
-				<td>${board.writer}</td>
-				<td>${board.regdate}</td>
-				<td>${board.cnt}</td>
+				<td colspan="5">데이터가 없습니다</td>
 			</tr>
-		</c:forEach>
+		</c:if>
+		<c:if test="${not empty boardList }">	
+			<c:forEach var ="board" items="${sessionScope.boardList}">
+				<tr>
+					<td class="center">${board.seq}</td>
+					<td>
+						<a href="getBoard.do?seq=${board.seq}">
+							${board.title}
+						</a>
+					</td>
+					<td>${board.writer}</td>
+					<td>${board.regdate}</td>
+					<td>${board.cnt}</td>
+				</tr>
+			</c:forEach>
+		</c:if>
 	</table>
 	<p><a href="insertBoard.jsp">새글등록</a></p>
 </div>
