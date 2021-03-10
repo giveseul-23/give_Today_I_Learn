@@ -27,7 +27,7 @@ public class BoardDAO {
 				"  VALUES((SELECT NVL(MAX(SEQ), 0) + 1 FROM BOARD), ?, ?, ?)";
 	
 	private final String BOARD_UPDATE
-		= "UPDATE BOARD SET TITLE = ?, CONTENT = ? WHERE SEQ = ?";
+		= "UPDATE BOARD SET TITLE = ?, WRITER = ?, CONTENT = ? WHERE SEQ = ?";
 
 	private final String BOARD_DELETE
 		= "DELETE FROM BOARD WHERE SEQ = ?";
@@ -51,7 +51,7 @@ public class BoardDAO {
 			stmt.setString(1, vo.getTitle());
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3, vo.getContent());
-			
+
 			stmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -97,8 +97,9 @@ public class BoardDAO {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_UPDATE);
 			stmt.setString(1, vo.getTitle());
-			stmt.setString(2, vo.getContent());
-			stmt.setInt(3, vo.getSeq());
+			stmt.setString(2, vo.getWriter());
+			stmt.setString(3, vo.getContent());
+			stmt.setInt(4, vo.getSeq());
 			
 			stmt.executeUpdate();
 		} catch (SQLException e) {
