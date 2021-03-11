@@ -41,7 +41,7 @@
 				</select> -->
 				<!-- controller 내 ModelAttribute를 사용하여 옵션이 나오게 함  -->
 				<select name="searchCondition">
-					<c:forEach var="option" items="${conditionMap }">
+					<c:forEach var="option" items="${requestScope.conditionMap }">
 						<option value="${option.value }">${option.key }
 					</c:forEach>
 				</select>

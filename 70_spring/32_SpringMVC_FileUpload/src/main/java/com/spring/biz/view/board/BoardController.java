@@ -47,11 +47,8 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/getBoardList.do")
-	public String getBoardList(BoardVO vo, Model model, 
-			String condition, String keyword) {
+	public String getBoardList(BoardVO vo, Model model) {
 		System.out.println(">> 게시글 전체목록 보여주기 - getBoardList()");
-		System.out.println("> condition : " + condition);
-		System.out.println("> keyword : " + keyword);
 		
 		//검색조건 값이 없을 때 기본값 설정
 		if(vo.getSearchCondition() == null){

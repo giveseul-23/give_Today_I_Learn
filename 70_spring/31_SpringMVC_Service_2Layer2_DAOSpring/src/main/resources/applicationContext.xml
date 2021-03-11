@@ -13,7 +13,7 @@
 			com.spring.biz 해버리면 컨트롤러가 컨테이너에 중복되게 됨
 	  -->
 	  
-	 <!-- Spring JDBC 관련 설정 -->
+	<!-- Spring JDBC 관련 설정 -->
 	<!-- DataSource 설정 -->
 	<!-- BasicDataSource 2.5.0 ver -->
 	<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource"

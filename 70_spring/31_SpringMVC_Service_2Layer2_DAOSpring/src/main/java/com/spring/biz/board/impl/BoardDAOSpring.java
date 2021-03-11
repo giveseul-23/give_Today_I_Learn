@@ -53,7 +53,7 @@ public class BoardDAOSpring {
     public BoardVO getBoard(BoardVO vo) {
         System.out.println("===> JDBC getboBoardVO() 실행");
         BoardVO board = null;
-
+        
         return board;
     }
 

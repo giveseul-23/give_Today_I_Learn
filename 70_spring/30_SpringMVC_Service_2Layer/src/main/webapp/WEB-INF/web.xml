@@ -12,12 +12,12 @@
          
          <!-- Creates the Spring Container shared by all Servlets and Filters -->
 		<listener>
-		<!--
-			ContextLoaderListenet는 WAS ㅍ에 프로그램 로딩될 때 
-			스프링에서 사용할 설정파일을 찾아서 처리
-			기본으로   WEB-INF/spring/applicationContext.xml 파일 찾음
-			context-parm 태그를 사용해서 위치와 파일명 변경 적용
-		-->
+			<!--
+				ContextLoaderListenet는 WAS 에 프로그램 로딩될 때 
+				스프링에서 사용할 설정파일을 찾아서 처리
+				기본으로   WEB-INF/spring/applicationContext.xml 파일 찾음
+				context-parm 태그를 사용해서 위치와 파일명 변경 적용
+			-->
 			<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 		</listener>
          

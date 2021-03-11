@@ -11,6 +11,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.context.annotation.RequestScope;
+import org.springframework.web.context.annotation.SessionScope;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.spring.biz.board.BoardVO;
@@ -77,7 +79,7 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/updateBoard.do")
-    public String UpdateBoard( BoardVO vo, BoardDAO dao) {
+    public String UpdateBoard(BoardVO vo, BoardDAO dao) {
 		System.out.println(">> 게시글 수정처리 - UpdateBoard()");
         dao.updateBoard(vo);
 		
