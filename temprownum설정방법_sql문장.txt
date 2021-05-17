@@ -1,0 +1,11 @@
+SELECT *
+FROM(
+    SELECT ROWNUM AS RN, EMP.*
+        FROM(
+                SELECT  E.* 
+                FROM employees E
+                ORDER BY LAST_NAME
+        ) EMP
+    )
+WHERE RN BETWEEN 11 AND 20
+;

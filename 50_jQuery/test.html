@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+       .order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100]{display:table;width:100%;min-height:73px;font-size:18px;font-weight:700;line-height:72px}.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100]   .in_td[_ngcontent-tqt-c100]{display:table-cell;position:relative;text-align:center;vertical-align:middle}.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100]   .type1[_ngcontent-tqt-c100]{float:left;width:100px}.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100]   .type2[_ngcontent-tqt-c100]{overflow:hidden}.order_lst[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]{text-align:left}.goods[_ngcontent-tqt-c100]   .in_td[_ngcontent-tqt-c100]{margin-top:0}.goods[_ngcontent-tqt-c100]   .goods_row[_ngcontent-tqt-c100]{min-height:80px}.goods[_ngcontent-tqt-c100]   .info_bx[_ngcontent-tqt-c100]{-webkit-box-align:start;align-items:flex-start}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .brand_name[_ngcontent-tqt-c100]{font-size:12px}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .option_lst[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100]{display:block;font-size:12px;line-height:20px}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .option_lst[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100]:before{display:none;margin:0}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .option_lst[_ngcontent-tqt-c100]   span[_ngcontent-tqt-c100]{display:inline-block;margin-right:3px}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .option_lst[_ngcontent-tqt-c100]   span.mr0[_ngcontent-tqt-c100]{margin-right:0}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .option_lst[_ngcontent-tqt-c100]   .goods_desc[_ngcontent-tqt-c100]{margin-top:9px}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .goods_desc[_ngcontent-tqt-c100]{font-size:12px}.goods[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]   .type[_ngcontent-tqt-c100]{font-size:23px;line-height:36px}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .btn[_ngcontent-tqt-c100]{display:block;border-radius:2px;text-decoration:none}@media screen and (min-width:541px){.order_lst[_ngcontent-tqt-c100]{border-top:4px solid #000;border-bottom:1px solid #000}.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100] + li[_ngcontent-tqt-c100]{border-top:1px solid #d4d4d4}.order_lst[_ngcontent-tqt-c100]   .goods_row[_ngcontent-tqt-c100]{display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center}.order_lst[_ngcontent-tqt-c100]   .goods_row[_ngcontent-tqt-c100]   .in_td[_ngcontent-tqt-c100]{display:block;box-sizing:border-box}.order_lst[_ngcontent-tqt-c100]   .col1[_ngcontent-tqt-c100]{width:-webkit-calc(100% - 630px);width:calc(100% - 630px)}.order_lst[_ngcontent-tqt-c100]   .col2[_ngcontent-tqt-c100]{width:300px}.order_lst[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]{width:250px}.order_lst[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]{width:80px}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .goods_btn[_ngcontent-tqt-c100]{float:right;width:76px;margin-top:-8px}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .btn[_ngcontent-tqt-c100]{min-width:auto;width:76px;height:34px;line-height:34px;font-size:11px}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .btn[_ngcontent-tqt-c100] + .btn[_ngcontent-tqt-c100]{margin-top:5px}.goods[_ngcontent-tqt-c100]   .in_td[_ngcontent-tqt-c100]{min-height:auto}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]{max-width:100%}.goods[_ngcontent-tqt-c100]   .info_bx[_ngcontent-tqt-c100]{padding:0 0 0 100px}}@media screen and (min-width:541px) and (max-width:1240px){.order_lst[_ngcontent-tqt-c100]   .col1[_ngcontent-tqt-c100]{width:46%}.order_lst[_ngcontent-tqt-c100]   .col2[_ngcontent-tqt-c100]{width:20%}.order_lst[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]{width:22%}.order_lst[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]{width:12%}}@media screen and (max-width:540px){.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100] + li[_ngcontent-tqt-c100]{border:none}.order_lst[_ngcontent-tqt-c100]   .thead[_ngcontent-tqt-c100]{display:none}.goods[_ngcontent-tqt-c100]   .info[_ngcontent-tqt-c100]   .goods_desc[_ngcontent-tqt-c100]{font-size:13px}.goods[_ngcontent-tqt-c100]   .col2[_ngcontent-tqt-c100]{display:none}.goods[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]   .type[_ngcontent-tqt-c100]{display:inline-block;color:#303033;font-size:13px;line-height:16px;font-weight:600}.goods[_ngcontent-tqt-c100]   .col3[_ngcontent-tqt-c100]   .deliver[_ngcontent-tqt-c100]   strong[_ngcontent-tqt-c100]{text-decoration:underline}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]{margin:0}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .goods_btn[_ngcontent-tqt-c100]{float:none;clear:both;width:auto;margin-top:0;padding-right:0}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .goods_btn[_ngcontent-tqt-c100]:after{display:block;clear:both;content:""}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .goods_btn[_ngcontent-tqt-c100]   .btn[_ngcontent-tqt-c100]{display:inline-block;float:left;min-width:76px;margin:8px 0 4px;padding:0 5px}.goods[_ngcontent-tqt-c100]   .col4[_ngcontent-tqt-c100]   .goods_btn[_ngcontent-tqt-c100]   .btn[_ngcontent-tqt-c100] + .btn[_ngcontent-tqt-c100]{margin-left:5px}}.goods_brand[_ngcontent-tqt-c100]{position:relative}.goods_brand[_ngcontent-tqt-c100] + .goods_brand[_ngcontent-tqt-c100]{margin-top:20px;padding-top:20px;border-top:1px solid #d4d4d4}.goods_brand_delivery[_ngcontent-tqt-c100]{display:-webkit-box;display:flex;-webkit-box-align:center;align-items:center;-webkit-box-pack:center;justify-content:center}.goods_brand_delivery[_ngcontent-tqt-c100]   .brand_delivery_info[_ngcontent-tqt-c100]   p[_ngcontent-tqt-c100]{font-size:14px}.goods_brand_delivery[_ngcontent-tqt-c100]   .hover_view[_ngcontent-tqt-c100]{display:none;position:absolute;top:100%;left:50%;z-index:20;width:240px;margin-left:-110px;padding:12px 20px 10px 17px;border:1px solid #d4d4d4;background:#fff;line-height:16px;text-align:left;box-sizing:border-box}.goods_brand_delivery[_ngcontent-tqt-c100]   .hover_view[_ngcontent-tqt-c100]   strong[_ngcontent-tqt-c100]{color:#303033}.goods_brand_delivery[_ngcontent-tqt-c100]   .delivery_icon[_ngcontent-tqt-c100]{display:inline-block;width:14px;height:14px;margin-left:6px;background:url(https://img.29cm.co.kr/next29cm/delivery_icon.png);background-size:14px 14px;vertical-align:top}.goods_brand_delivery[_ngcontent-tqt-c100]   .brand_delivery_info[_ngcontent-tqt-c100]:hover   .hover_view[_ngcontent-tqt-c100]{display:block}@media screen and (min-width:541px){.goods_brand_delivery[_ngcontent-tqt-c100]{position:absolute;top:0;right:325px;bottom:0;width:300px}.inline-txt[_ngcontent-tqt-c100]{font-weight:700}}@media screen and (min-width:541px) and (max-width:1240px){.goods_brand_delivery[_ngcontent-tqt-c100]{right:34%;width:20%}}@media screen and (max-width:540px){.goods_brand[_ngcontent-tqt-c100]{margin-bottom:24px}.goods_brand[_ngcontent-tqt-c100] + .goods_brand[_ngcontent-tqt-c100]{margin-top:0;padding-top:0;border-top:none}.goods_brand_delivery[_ngcontent-tqt-c100]{padding:14px;border-top:1px solid #d4d4d4;border-bottom:1px solid #000}.inline-txt[_ngcontent-tqt-c100]{display:inline-block}}.goods_tip[_ngcontent-tqt-c100]{margin:12px 0 0 30px;font-size:13px;line-height:24px;color:#303033}.goods_tip[_ngcontent-tqt-c100]   a[_ngcontent-tqt-c100]{text-decoration:underline;color:#5d5d5d}.goods_tip[_ngcontent-tqt-c100]   dt[_ngcontent-tqt-c100]{padding:6px 0;font-weight:600;font-size:12px;line-height:16px;color:#a0a0a0}.goods_tip2[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100], .goods_tip[_ngcontent-tqt-c100]   dd[_ngcontent-tqt-c100]{position:relative;padding-left:8px;line-height:22px;color:#a0a0a0}.goods_tip2[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100]:after, .goods_tip[_ngcontent-tqt-c100]   dd[_ngcontent-tqt-c100]:after{position:absolute;top:11px;left:0;width:4px;height:1px;background:#a0a0a0;vertical-align:top;content:""}.goods_tip2[_ngcontent-tqt-c100]{margin:12px 0 0}.goods_tip2[_ngcontent-tqt-c100]   .is_emphasis[_ngcontent-tqt-c100]{color:#ff4800}.goods_tip2[_ngcontent-tqt-c100]   .is_emphasis[_ngcontent-tqt-c100]:after{background:#ff4800}@media screen and (min-width:541px){.goods_tip[_ngcontent-tqt-c100]   dt[_ngcontent-tqt-c100]{display:none}.goods_tip2[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100], .goods_tip[_ngcontent-tqt-c100]   dd[_ngcontent-tqt-c100]{font-size:13px}}@media screen and (min-width:541px) and (max-width:1200px){.goods_tip[_ngcontent-tqt-c100]{margin-left:18px}}@media screen and (max-width:540px){.goods_tip[_ngcontent-tqt-c100]{margin:12px 0 0;line-height:22px}.goods_tip[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100]{position:relative;padding-left:10px}.goods_tip[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100]:after{position:absolute;top:10px;left:0;width:3px;height:3px;border-radius:50%;background:#a0a0a0;content:""}.goods_tip2[_ngcontent-tqt-c100]   li[_ngcontent-tqt-c100], .goods_tip[_ngcontent-tqt-c100]   dd[_ngcontent-tqt-c100]{font-size:12px}}.return_tit[_ngcontent-tqt-c100]   span[_ngcontent-tqt-c100]{font-size:13px;line-height:30px}@media screen and (min-width:541px){.return_tit[_ngcontent-tqt-c100]{margin-top:78px;padding-bottom:18px;border-bottom:4px solid #000;font-size:22px;color:#000;line-height:28px;font-weight:600}}@media screen and (max-width:540px){.return_tit[_ngcontent-tqt-c100]{margin-top:50px;padding:26px 0 20px;border-top:4px solid #000;border-bottom:1px solid #d4d4d4;font-size:18px;line-height:24px}}  .order_common .return_tit{position:relative}  .order_common .return_tit .btn_arr{position:absolute;right:0;bottom:16px;font-size:12px;color:#303033}  .order_common .return_tit .btn_arr:after{position:absolute;top:50%;right:2px;width:6px;height:6px;margin-top:-3px;border:1px solid #5d5d5d;border-width:1px 1px 0 0;-webkit-transform:rotate(45deg);transform:rotate(45deg);content:""}…
+    </style>
+</head>
+<body>
+    <ul _ngcontent-tqt-c100="" class="order_lst">
+    <li _ngcontent-tqt-c100="" class="thead" style="border-bottom: 0px;">
+        <div _ngcontent-tqt-c100="" class="in_td col1">상품정보</div>
+        <div _ngcontent-tqt-c100="" class="in_td col2">배송비</div>
+        <div _ngcontent-tqt-c100="" class="in_td col3">진행상태</div>
+        <div _ngcontent-tqt-c100="" class="in_td col4">&nbsp;</div>
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/7320258"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2021.03.18</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/7320258"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20210318-4580077</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <div _ngcontent-tqt-c100="" class="goods_gift ng-star-inserted">
+                <div _ngcontent-tqt-c100="">
+                    <span _ngcontent-tqt-c100=""></span>
+                    <p _ngcontent-tqt-c100=""> TO. 신동호</p>
+                </div>
+                <div _ngcontent-tqt-c100="" class="delivery_gift">
+                    선물 수락
+                </div>
+            </div>
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/7320258">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2021/02/03/45bb433abea8461aa0720d0b9bef225f_20210203182204.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">NEITHERS</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">S L/S T-SHIRT</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[SIZE]5</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">48,000</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            CJ대한통운
+                            <strong _ngcontent-tqt-c100="">384112467004</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=7320258&amp;orderSerial=ORD20210318-4580077&amp;orderItemManageNo=12854813">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <!---->
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 3,000원 </span>
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/5854863"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.10.13</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/5854863"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20201013-6301170</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/5854863">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/09/09/07972e45219e4af197f6a1d939f8c7ea_20200909160717.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">LE</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">straight blue jean (blue)</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[size]large</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">65,600</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">취소완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <!---->
+
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=5854863&amp;orderSerial=ORD20201013-6301170&amp;orderItemManageNo=10784732">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <!---->
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 2,500원 </span>
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/5814739"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.10.07</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/5814739"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20201007-5804435</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/5814739">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/09/25/a8349de1c9ce4a17b28f0e9c4454100a_20200925161433.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">TWN</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">[기획특가] [티떠블유엔] 밀크믹스 플리스 아노락 7종 YMMT3257</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[색상및사이즈]검정XL</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">24,900</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            우체국택배
+                            <strong _ngcontent-tqt-c100="">6865425130004</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=5814739&amp;orderSerial=ORD20201007-5804435&amp;orderItemManageNo=10727803">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/5706956"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.09.22</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/5706956"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200922-4472886</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/5706956">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/08/31/54b7ca448a124ec9b9d3bb7d57ba37c9_20200831000332.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">NIKE _ 다올</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">나이키 NSW 클럽 후드티 BV2654 화이트</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[사이즈]L</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">52,900</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            CJ대한통운
+                            <strong _ngcontent-tqt-c100="">634255864266</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=5706956&amp;orderSerial=ORD20200922-4472886&amp;orderItemManageNo=10576548">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/5349336"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.08.08</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/5349336"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200808-0108148</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/5349336">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/06/10/842edaebc7b2433693450ae751a9ad51_20200610212048.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">MOTT</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">half one size cotton Pants 1/2 (butter)</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[SIZE]FREE</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">61,030</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">취소완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <!---->
+
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=5349336&amp;orderSerial=ORD20200808-0108148&amp;orderItemManageNo=10069456">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/4750224"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.06.01</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/4750224"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200601-2473223</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/4750224">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/05/15/4f3914aeb5604e65b23b002ecff23b46_20200515170835.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">INGSY</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">[1+1] INGSY 쿨라이트 하프 니트 (10color)</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[1번 색상]클래식블루 (예약발송) [1번 사이즈] M [2번 색상] 핑크 [2번 사이즈] M</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">54,000</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point type_prime">취소완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <!---->
+
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=4750224&amp;orderSerial=ORD20200601-2473223&amp;orderItemManageNo=9206250">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/4609967"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.05.14</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/4609967"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200514-0615561</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/4609967">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2020/04/21/58f83212ce9b4176a3c5756a32c0a070_20200421113459.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">THOMASMORE</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">dn0102 에코셀비지</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[Size]Medium</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">71,550</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            CJ대한통운
+                            <strong _ngcontent-tqt-c100="">380132337774</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=4609967&amp;orderSerial=ORD20200514-0615561&amp;orderItemManageNo=8994530">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/4572394"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.05.09</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/4572394"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200509-0111657</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/4572394">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2019/09/10/dc3e94ebdd5d4943b3fe9313b21bc128_20190910133414.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">ANEDIT</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">P Belted Blouse_CR</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">51,750</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            한진택배
+                            <strong _ngcontent-tqt-c100="">417130192920</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=4572394&amp;orderSerial=ORD20200509-0111657&amp;orderItemManageNo=8935878">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/4161836"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.03.10</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/4161836"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200310-4670421</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/4161836">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2019/08/06/98178fea76a045419c41cd71f40ee5cd_20190806172644.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">KINDERSALMON</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">FW19 STRAIGHT JEANS BLUE</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[SIZE]3(L)</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">98,000</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">반품완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <!---->
+
+
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <a _ngcontent-tqt-c100="" class="btn btn_bor2 ng-star-inserted">반품상세정보</a>
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=4161836&amp;orderSerial=ORD20200310-4670421&amp;orderItemManageNo=8323387">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <!---->
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 2,500원 </span>
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+
+        <div _ngcontent-tqt-c100="" class="stepbox ng-star-inserted">
+            <ul _ngcontent-tqt-c100="" class="order_num">
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" href="/mypage/my-order/detail/3947315"><span _ngcontent-tqt-c100="">주문일자</span> <em _ngcontent-tqt-c100="">2020.02.02</em></a>
+                </li>
+                <li _ngcontent-tqt-c100="">
+                    <a _ngcontent-tqt-c100="" class="order_num_txt" href="/mypage/my-order/detail/3947315"><span _ngcontent-tqt-c100="" class="pc_view">주문번호</span> <em _ngcontent-tqt-c100="">ORD20200202-1784107</em></a>
+                </li>
+            </ul>
+            <ul _ngcontent-tqt-c100="" class="btnbx">
+                <!---->
+            </ul>
+        </div>
+        <!---->
+        <div _ngcontent-tqt-c100="" class="goods ng-star-inserted">
+
+            <!---->
+            <div _ngcontent-tqt-c100="" class="goods_brand ng-star-inserted">
+                <div _ngcontent-tqt-c100="" class="goods_row ng-star-inserted">
+                    <div _ngcontent-tqt-c100="" class="in_td col1">
+                        <a _ngcontent-tqt-c100="" class="info_bx" href="/mypage/my-order/detail/3947315">
+                            <div _ngcontent-tqt-c100="" class="imgbx">
+                                <div _ngcontent-tqt-c100="" class="imgin">
+                                    <img _ngcontent-tqt-c100="" alt="" src="//img.29cm.co.kr/next-product/2019/09/05/cd6d0864b3b846fb81975d0b3811373d_20190905185458.jpg?width=300">
+                                </div>
+                            </div>
+                            <div _ngcontent-tqt-c100="" class="info">
+                                <p _ngcontent-tqt-c100="" class="brand_name">MOIA</p>
+                                <p _ngcontent-tqt-c100="" class="goods_tit">[소녀시대수영착용] selvage denim</p>
+                                <ul _ngcontent-tqt-c100="" class="option_lst">
+                                    <li _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                        <span _ngcontent-tqt-c100="">[size]L</span>
+                                        <!---->
+                                    </li>
+                                    <!---->
+                                    <!---->
+                                </ul>
+                                <p _ngcontent-tqt-c100="" class="goods_price"><span _ngcontent-tqt-c100="" class="num">112,000</span>원 <span _ngcontent-tqt-c100="">/ 수량 1개</span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col2">
+                        &nbsp;
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col3">
+                        <strong _ngcontent-tqt-c100="" class="type point">배송 완료</strong>
+
+                        <div _ngcontent-tqt-c100="" class="txt2">
+                            <!---->
+                        </div>
+
+
+                        <span _ngcontent-tqt-c100="" class="dt ng-star-inserted">
+
+
+
+                            <!---->
+                            <!---->
+                            <!---->
+                        </span>
+                        <!---->
+
+
+
+                        <!---->
+                        <a _ngcontent-tqt-c100="" href="javascript:;" class="deliver ng-star-inserted">
+                            CJ대한통운
+                            <strong _ngcontent-tqt-c100="">628334236083</strong>
+                        </a>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div _ngcontent-tqt-c100="" class="in_td col4">
+                        <div _ngcontent-tqt-c100="" class="goods_btn ng-star-inserted">
+                            <!---->
+
+                            <!---->
+                            <!---->
+                            <a _ngcontent-tqt-c100="" routerlink="/cscenter/qna/qna-mantoman-detail/" class="btn btn_bor2" href="/mypage/cscenter/qna/qna-mantoman-detail?orderNo=3947315&amp;orderSerial=ORD20200202-1784107&amp;orderItemManageNo=8010700">1:1문의</a>
+                        </div>
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+
+                <div _ngcontent-tqt-c100="" class="goods_brand_delivery">
+                    <div _ngcontent-tqt-c100="" class="brand_delivery_info">
+                        <p _ngcontent-tqt-c100=""><span _ngcontent-tqt-c100="" class="m_view inline-txt">배송비 : </span>
+                            <span _ngcontent-tqt-c100="" class="ng-star-inserted">
+                                <span _ngcontent-tqt-c100="" class="ng-star-inserted"> 무료배송 </span>
+                                <!---->
+                                <!---->
+                            </span>
+                            <!---->
+                            <!---->
+
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+        <!---->
+
+    </li>
+    <!---->
+</ul>
+</body>
+</html>
+   

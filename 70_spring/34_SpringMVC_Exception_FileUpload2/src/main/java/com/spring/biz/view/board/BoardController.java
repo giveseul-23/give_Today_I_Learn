@@ -23,7 +23,7 @@ import com.spring.biz.board.BoardVO;
 import com.spring.biz.board.impl.BoardDAO;
 
 @Controller
-//@SessionAttributes("board") //board라는 이름의 Model 이 있으면 세션에 저장
+@SessionAttributes("board") //board라는 이름의 Model 이 있으면 세션에 저장
 public class BoardController {
 	
 	@Autowired //BoardServiceImpl 객체 의존주입 : 동일한 데이터 타입 객체
@@ -91,13 +91,6 @@ public class BoardController {
 		
 		System.out.println("vo : " + vo);
 		
-		/*
-		  	파일업로드 관련 처리
-		  	MultipartFile 인터페이스 주요 메소드
-		  	String(리턴타입) .getOriginalFilename() : 업로드할 파일명 찾기
-		  	void .transferTo : 업로드할 파일을 업로드 처리
-		  	boolean isEmpty() : 업로드할 파일의 존재여부(없으면 true)
-		*/
 		MultipartFile uploadFile = vo.getUploadFile();
 		System.out.println("파일  : " + uploadFile);
 		if(!uploadFile.isEmpty()) { //파일이 있으면
@@ -110,8 +103,6 @@ public class BoardController {
 	}
 	
 	@RequestMapping("/updateBoard.do")
-	//인수(파라미터)에 설정한 @ModelAttribute("board") : 속성명 board 가 있으면 사용
-	//없으면 새로 만들어서 적용
     public String UpdateBoard(@ModelAttribute("board") BoardVO vo) {
 		System.out.println(">> 게시글 수정처리 - UpdateBoard()");
 		System.out.println("> board : " + vo);
